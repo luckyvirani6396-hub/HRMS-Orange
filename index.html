@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HRCore - HRMS Dashboard</title>
   <link rel="stylesheet" href="css/styles-vanilla.css">
-  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
@@ -17,10 +16,10 @@
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-header">
         <div class="logo-container">
-          <img src='./assets/images/Synergy-logo.png' alt="" class="logo-full">
-          <img src="./assets/images/synergyIcon (2).png" alt="" class="logo-icon" />
+          <img src="./assets/images/Synergy-logo.png" alt="Synergy HRMS" class="logo-full">
+          <img src="./assets/images/synergyIcon (2).png" alt="Synergy" class="logo-icon" />
         </div>
-        <button class="toggle-btn" id="toggleSidebar">
+        <button class="toggle-btn" id="toggleSidebar" aria-label="Collapse sidebar">
           <i class="material-icons" id="toggleIcon">chevron_left</i>
         </button>
       </div>
@@ -31,13 +30,13 @@
           <p class="nav-section-title">Main</p>
           <ul class="nav-items">
             <li>
-              <button class="nav-item active" data-item="Dashboard">
+              <button class="nav-item active" data-item="Dashboard" data-page="dashboard">
                 <i class="material-icons">dashboard</i>
                 <span>Dashboard</span>
               </button>
             </li>
             <li>
-              <button class="nav-item" data-item="Employees">
+              <button class="nav-item" data-item="Employees" data-page="employees">
                 <i class="material-icons">groups</i>
                 <span>Employees</span>
               </button>
@@ -132,11 +131,6 @@
           <i class="material-icons">help</i>
           <span>Help & Support</span>
         </button>
-        <!-- <div class="upgrade-card">
-          <p class="upgrade-title">Upgrade to Pro</p>
-          <p class="upgrade-text">Unlock advanced analytics & reports</p>
-          <button class="upgrade-btn">Upgrade Now</button>
-        </div> -->
       </div>
     </aside>
 
@@ -169,51 +163,12 @@
             <span id="currentDate">April 17, 2026</span>
           </div>
 
-          <button class="icon-btn">
+          <button class="icon-btn" aria-label="Toggle theme">
             <i class="material-icons">light_mode</i>
           </button>
 
-          <!-- <div class="notification-container">
-            <button class="icon-btn notification-btn" id="notificationBtn">
-              <i class="fas fa-bell"></i>
-              <span class="notification-badge">3</span>
-            </button>
-            <div class="notification-dropdown" id="notificationDropdown">
-              <div class="dropdown-header">
-                <p>Notifications</p>
-                <span class="mark-all">Mark all read</span>
-              </div>
-              <div class="notification-list">
-                <div class="notification-item unread">
-                  <div class="notification-dot"></div>
-                  <div class="notification-content">
-                    <p>Leave request from John Doe</p>
-                    <span>5m ago</span>
-                  </div>
-                </div>
-                <div class="notification-item unread">
-                  <div class="notification-dot"></div>
-                  <div class="notification-content">
-                    <p>Payroll processed for March</p>
-                    <span>1h ago</span>
-                  </div>
-                </div>
-                <div class="notification-item">
-                  <div class="notification-dot"></div>
-                  <div class="notification-content">
-                    <p>New employee onboarding today</p>
-                    <span>3h ago</span>
-                  </div>
-                </div>
-              </div>
-              <div class="dropdown-footer">
-                <button>View all notifications</button>
-              </div>
-            </div>
-          </div> -->
-
           <div class="profile-container">
-            <button class="profile-btn" id="profileBtn">
+            <button class="profile-btn" id="profileBtn" aria-label="Open profile menu">
               <div class="avatar">A</div>
               <div class="profile-info">
                 <p>Admin User</p>
@@ -235,7 +190,7 @@
       </header>
 
       <!-- Dashboard Content -->
-      <main class="dashboard">
+      <main class="dashboard page-view active" id="dashboardPage">
         <!-- Header -->
         <div class="dashboard-header">
           <div>
@@ -717,10 +672,10 @@
                     <p class="emp-role">UI/UX Designer</p>
                   </div>
                 </div>
-                <div>Design</div>
+                <div><span class="dept-label">Design</span></div>
                 <div><span class="status-badge active">Active</span></div>
-                <div>Apr 10</div>
-                <div><button class="more-btn"><i class="fas fa-ellipsis-h"></i></button></div>
+                <div><span class="joined-date">Apr 10</span></div>
+                <div><button class="more-btn" aria-label="More actions for Sarah Johnson"><i class="material-icons">more_horiz</i></button></div>
               </div>
               <div class="employee-row">
                 <div class="employee-info">
@@ -730,10 +685,10 @@
                     <p class="emp-role">Backend Developer</p>
                   </div>
                 </div>
-                <div>Engineering</div>
+                <div><span class="dept-label">Engineering</span></div>
                 <div><span class="status-badge active">Active</span></div>
-                <div>Apr 8</div>
-                <div><button class="more-btn"><i class="fas fa-ellipsis-h"></i></button></div>
+                <div><span class="joined-date">Apr 8</span></div>
+                <div><button class="more-btn" aria-label="More actions for Marcus Chen"><i class="material-icons">more_horiz</i></button></div>
               </div>
               <div class="employee-row">
                 <div class="employee-info">
@@ -743,10 +698,10 @@
                     <p class="emp-role">Marketing Lead</p>
                   </div>
                 </div>
-                <div>Marketing</div>
+                <div><span class="dept-label">Marketing</span></div>
                 <div><span class="status-badge leave">On Leave</span></div>
-                <div>Apr 5</div>
-                <div><button class="more-btn"><i class="fas fa-ellipsis-h"></i></button></div>
+                <div><span class="joined-date">Apr 5</span></div>
+                <div><button class="more-btn" aria-label="More actions for Emily Rodriguez"><i class="material-icons">more_horiz</i></button></div>
               </div>
               <div class="employee-row">
                 <div class="employee-info">
@@ -756,10 +711,10 @@
                     <p class="emp-role">Product Manager</p>
                   </div>
                 </div>
-                <div>Product</div>
+                <div><span class="dept-label">Product</span></div>
                 <div><span class="status-badge active">Active</span></div>
-                <div>Apr 3</div>
-                <div><button class="more-btn"><i class="fas fa-ellipsis-h"></i></button></div>
+                <div><span class="joined-date">Apr 3</span></div>
+                <div><button class="more-btn" aria-label="More actions for David Kim"><i class="material-icons">more_horiz</i></button></div>
               </div>
               <div class="employee-row">
                 <div class="employee-info">
@@ -769,10 +724,10 @@
                     <p class="emp-role">Data Analyst</p>
                   </div>
                 </div>
-                <div>Analytics</div>
+                <div><span class="dept-label">Analytics</span></div>
                 <div><span class="status-badge active">Active</span></div>
-                <div>Apr 1</div>
-                <div><button class="more-btn"><i class="fas fa-ellipsis-h"></i></button></div>
+                <div><span class="joined-date">Apr 1</span></div>
+                <div><button class="more-btn" aria-label="More actions for Priya Patel"><i class="material-icons">more_horiz</i></button></div>
               </div>
             </div>
           </div>
@@ -788,67 +743,75 @@
               <p>406 total employees</p>
             </div>
             <div class="progress-bar">
-              <div class="progress-segment orange" style="width: 35%"></div>
-              <div class="progress-segment blue" style="width: 17%"></div>
-              <div class="progress-segment pink" style="width: 11%"></div>
-              <div class="progress-segment green" style="width: 22%"></div>
-              <div class="progress-segment amber" style="width: 9%"></div>
-              <div class="progress-segment teal" style="width: 6%"></div>
+              <div class="progress-segment orange" style="--value: 35%"></div>
+              <div class="progress-segment blue" style="--value: 17%"></div>
+              <div class="progress-segment pink" style="--value: 11%"></div>
+              <div class="progress-segment green" style="--value: 22%"></div>
+              <div class="progress-segment amber" style="--value: 9%"></div>
+              <div class="progress-segment teal" style="--value: 6%"></div>
             </div>
-            <div class="dept-list">
-              <div class="dept-item">
-                <span class="dept-color orange"></span>
-                <span class="dept-name">Engineering</span>
-                <span class="dept-count">142</span>
-                <div class="dept-progress">
-                  <div style="width: 35%"></div>
+            <div class="dept-chart-layout">
+              <div class="dept-donut" aria-label="Department employee distribution">
+                <div class="dept-donut-center">
+                  <span>406</span>
+                  <small>Employees</small>
                 </div>
-                <span class="dept-percent">35%</span>
               </div>
-              <div class="dept-item">
-                <span class="dept-color blue"></span>
-                <span class="dept-name">Marketing</span>
-                <span class="dept-count">68</span>
-                <div class="dept-progress">
-                  <div style="width: 17%"></div>
+              <div class="dept-list">
+                <div class="dept-item" style="--value: 35%">
+                  <span class="dept-color orange"></span>
+                  <span class="dept-name">Engineering</span>
+                  <span class="dept-count">142</span>
+                  <div class="dept-progress">
+                    <div></div>
+                  </div>
+                  <span class="dept-percent">35%</span>
                 </div>
-                <span class="dept-percent">17%</span>
-              </div>
-              <div class="dept-item">
-                <span class="dept-color pink"></span>
-                <span class="dept-name">Design</span>
-                <span class="dept-count">45</span>
-                <div class="dept-progress">
-                  <div style="width: 11%"></div>
+                <div class="dept-item" style="--value: 17%">
+                  <span class="dept-color blue"></span>
+                  <span class="dept-name">Marketing</span>
+                  <span class="dept-count">68</span>
+                  <div class="dept-progress">
+                    <div></div>
+                  </div>
+                  <span class="dept-percent">17%</span>
                 </div>
-                <span class="dept-percent">11%</span>
-              </div>
-              <div class="dept-item">
-                <span class="dept-color green"></span>
-                <span class="dept-name">Sales</span>
-                <span class="dept-count">89</span>
-                <div class="dept-progress">
-                  <div style="width: 22%"></div>
+                <div class="dept-item" style="--value: 11%">
+                  <span class="dept-color pink"></span>
+                  <span class="dept-name">Design</span>
+                  <span class="dept-count">45</span>
+                  <div class="dept-progress">
+                    <div></div>
+                  </div>
+                  <span class="dept-percent">11%</span>
                 </div>
-                <span class="dept-percent">22%</span>
-              </div>
-              <div class="dept-item">
-                <span class="dept-color amber"></span>
-                <span class="dept-name">Finance</span>
-                <span class="dept-count">38</span>
-                <div class="dept-progress">
-                  <div style="width: 9%"></div>
+                <div class="dept-item" style="--value: 22%">
+                  <span class="dept-color green"></span>
+                  <span class="dept-name">Sales</span>
+                  <span class="dept-count">89</span>
+                  <div class="dept-progress">
+                    <div></div>
+                  </div>
+                  <span class="dept-percent">22%</span>
                 </div>
-                <span class="dept-percent">9%</span>
-              </div>
-              <div class="dept-item">
-                <span class="dept-color teal"></span>
-                <span class="dept-name">HR</span>
-                <span class="dept-count">24</span>
-                <div class="dept-progress">
-                  <div style="width: 6%"></div>
+                <div class="dept-item" style="--value: 9%">
+                  <span class="dept-color amber"></span>
+                  <span class="dept-name">Finance</span>
+                  <span class="dept-count">38</span>
+                  <div class="dept-progress">
+                    <div></div>
+                  </div>
+                  <span class="dept-percent">9%</span>
                 </div>
-                <span class="dept-percent">6%</span>
+                <div class="dept-item" style="--value: 6%">
+                  <span class="dept-color teal"></span>
+                  <span class="dept-name">HR</span>
+                  <span class="dept-count">24</span>
+                  <div class="dept-progress">
+                    <div></div>
+                  </div>
+                  <span class="dept-percent">6%</span>
+                </div>
               </div>
             </div>
           </div>
@@ -909,6 +872,154 @@
                     <span><i class="material-icons">group</i> 15</span>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <main class="employees-page page-view" id="employeesPage">
+        <div class="employees-header">
+          <div>
+            <h1 class="employees-title">Employees</h1>
+            <p class="employees-subtitle">Manage your team members and their information</p>
+          </div>
+          <button class="add-employee-btn">
+            <i class="material-icons">add</i>
+            <span>Add New Employee</span>
+          </button>
+        </div>
+
+        <div class="employees-filters">
+          <label class="employee-search" for="employeeSearch">
+            <i class="material-icons">search</i>
+            <input id="employeeSearch" type="search" placeholder="Search by name or email...">
+          </label>
+          <select class="filter-select" aria-label="Filter by department">
+            <option>All Departments</option>
+            <option>Design</option>
+            <option>Engineering</option>
+            <option>Marketing</option>
+            <option>Product</option>
+            <option>Analytics</option>
+          </select>
+          <select class="filter-select" aria-label="Filter by status">
+            <option>All Status</option>
+            <option>Active</option>
+            <option>On Leave</option>
+            <option>Inactive</option>
+          </select>
+        </div>
+
+        <div class="employees-toolbar">
+          <div class="view-toggle">
+            <button class="active">Table</button>
+            <button>Grid</button>
+          </div>
+          <button class="export-btn">
+            <i class="material-icons">file_download</i>
+            <span>Export</span>
+          </button>
+        </div>
+
+        <div class="employee-directory-card">
+          <div class="employee-directory-table">
+            <div class="directory-row directory-header">
+              <div>Employee</div>
+              <div>Department</div>
+              <div>Position</div>
+              <div>Status</div>
+              <div>Join Date</div>
+              <div>Actions</div>
+            </div>
+            <div class="directory-row">
+              <div class="directory-employee">
+                <div class="avatar orange">SJ</div>
+                <div>
+                  <p>Sarah Johnson</p>
+                  <span>sarah.johnson@hrcore.com</span>
+                </div>
+              </div>
+              <div><span class="dept-label">Design</span></div>
+              <div>UI/UX Designer</div>
+              <div><span class="status-badge active">Active</span></div>
+              <div>Apr 10, 2024</div>
+              <div class="directory-actions">
+                <button aria-label="View Sarah Johnson card"><i class="material-icons">credit_card</i></button>
+                <button aria-label="Delete Sarah Johnson"><i class="material-icons">delete_outline</i></button>
+                <button aria-label="More actions for Sarah Johnson"><i class="material-icons">more_horiz</i></button>
+              </div>
+            </div>
+            <div class="directory-row">
+              <div class="directory-employee">
+                <div class="avatar blue">MC</div>
+                <div>
+                  <p>Marcus Chen</p>
+                  <span>marcus.chen@hrcore.com</span>
+                </div>
+              </div>
+              <div><span class="dept-label">Engineering</span></div>
+              <div>Backend Developer</div>
+              <div><span class="status-badge active">Active</span></div>
+              <div>Aug 15, 2023</div>
+              <div class="directory-actions">
+                <button aria-label="View Marcus Chen card"><i class="material-icons">credit_card</i></button>
+                <button aria-label="Delete Marcus Chen"><i class="material-icons">delete_outline</i></button>
+                <button aria-label="More actions for Marcus Chen"><i class="material-icons">more_horiz</i></button>
+              </div>
+            </div>
+            <div class="directory-row">
+              <div class="directory-employee">
+                <div class="avatar green">ER</div>
+                <div>
+                  <p>Emily Rodriguez</p>
+                  <span>emily.rodriguez@hrcore.com</span>
+                </div>
+              </div>
+              <div><span class="dept-label">Marketing</span></div>
+              <div>Marketing Lead</div>
+              <div><span class="status-badge leave">On Leave</span></div>
+              <div>May 20, 2023</div>
+              <div class="directory-actions">
+                <button aria-label="View Emily Rodriguez card"><i class="material-icons">credit_card</i></button>
+                <button aria-label="Delete Emily Rodriguez"><i class="material-icons">delete_outline</i></button>
+                <button aria-label="More actions for Emily Rodriguez"><i class="material-icons">more_horiz</i></button>
+              </div>
+            </div>
+            <div class="directory-row">
+              <div class="directory-employee">
+                <div class="avatar pink">DK</div>
+                <div>
+                  <p>David Kim</p>
+                  <span>david.kim@hrcore.com</span>
+                </div>
+              </div>
+              <div><span class="dept-label">Product</span></div>
+              <div>Product Manager</div>
+              <div><span class="status-badge active">Active</span></div>
+              <div>Jan 10, 2023</div>
+              <div class="directory-actions">
+                <button aria-label="View David Kim card"><i class="material-icons">credit_card</i></button>
+                <button aria-label="Delete David Kim"><i class="material-icons">delete_outline</i></button>
+                <button aria-label="More actions for David Kim"><i class="material-icons">more_horiz</i></button>
+              </div>
+            </div>
+            <div class="directory-row">
+              <div class="directory-employee">
+                <div class="avatar teal">PP</div>
+                <div>
+                  <p>Priya Patel</p>
+                  <span>priya.patel@hrcore.com</span>
+                </div>
+              </div>
+              <div><span class="dept-label">Analytics</span></div>
+              <div>Data Analyst</div>
+              <div><span class="status-badge active">Active</span></div>
+              <div>Jun 05, 2024</div>
+              <div class="directory-actions">
+                <button aria-label="View Priya Patel card"><i class="material-icons">credit_card</i></button>
+                <button aria-label="Delete Priya Patel"><i class="material-icons">delete_outline</i></button>
+                <button aria-label="More actions for Priya Patel"><i class="material-icons">more_horiz</i></button>
               </div>
             </div>
           </div>
