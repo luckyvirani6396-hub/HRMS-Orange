@@ -213,6 +213,10 @@
   background: #F1EFE8;
 }
 
+.card-body {
+  flex: 1;
+  text-align: right;
+}
 
 
 .card-value {
