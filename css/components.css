@@ -1,0 +1,79 @@
+/* ========== SHARED COMPONENTS ========== */
+.dept-label {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  min-height: 28px;
+  padding: 0 11px;
+  border-radius: 6px;
+  background-color: var(--gray-50);
+  border: 1px solid rgba(229, 231, 235, 0.8);
+  color: var(--gray-700);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 12px;
+  color: white;
+  position: relative;
+}
+.employee-info .avatar::after,
+.directory-employee .avatar::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 10px;
+  height: 10px;
+  background-color: #22c55e;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+.avatar.orange {
+  background: var(--gradient-orange);
+  box-shadow: 0 2px 6px rgba(234, 88, 12, 0.25);
+}
+.avatar.blue {
+  background: var(--gradient-blue);
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.15);
+}
+.avatar.green {
+  background: var(--gradient-green);
+  box-shadow: 0 2px 4px rgba(16, 185, 129, 0.15);
+}
+.avatar.pink {
+  background: var(--gradient-pink);
+  box-shadow: 0 2px 4px rgba(236, 72, 153, 0.15);
+}
+.avatar.teal {
+  background: var(--gradient-teal);
+  box-shadow: 0 2px 4px rgba(20, 184, 166, 0.15);
+}
+.status-badge {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 6px;
+  display: inline-block;
+}
+.status-badge.active {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--green-600);
+}
+.status-badge.leave {
+  background-color: rgba(255, 159, 64, 0.1);
+  color: var(--orange-600);
+}
+.status-badge.inactive {
+  background-color: var(--gray-100);
+  color: var(--gray-500);
+}

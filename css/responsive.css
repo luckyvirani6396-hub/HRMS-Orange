@@ -1,0 +1,138 @@
+/* ========== SCROLLBAR ========== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-300);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-400);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+  .topbar-left {
+    flex: 1;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .quick-actions .actions-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--orange-100);
+    flex-direction: row;
+    max-height: 60px;
+  }
+
+  .sidebar-header {
+    flex: 1;
+  }
+
+  .sidebar-nav {
+    display: none;
+  }
+
+  .sidebar-footer {
+    display: none;
+  }
+
+  .main-wrapper {
+    flex: 1;
+  }
+
+  .page-view {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .topbar {
+    height: auto;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  .topbar-left {
+    width: 100%;
+    gap: 8px;
+  }
+
+  .topbar-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .search-container {
+    max-width: 100%;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quick-actions .actions-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .employee-row {
+    grid-template-columns: 1fr 40px;
+  }
+
+  .employee-row>div:nth-child(2),
+  .employee-row>div:nth-child(3),
+  .employee-row>div:nth-child(4) {
+    display: none;
+  }
+
+  .employee-row.header {
+    display: grid;
+    grid-template-columns: 1fr 40px;
+  }
+
+  .employee-row.header>div:nth-child(2),
+  .employee-row.header>div:nth-child(3),
+  .employee-row.header>div:nth-child(4) {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboard-header {
+    flex-direction: column;
+  }
+
+  .chart-stats {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .actions-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .bar-chart {
+    height: 120px;
+  }
+}

@@ -1,0 +1,222 @@
+/* ========== EMPLOYEES PAGE ========== */
+.employees-page {
+  gap: 30px;
+}
+
+.employees-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.employees-title {
+  color: var(--gray-800);
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.employees-subtitle {
+  color: var(--gray-600);
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+.add-employee-btn {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 8px;
+  background: linear-gradient(to right, var(--orange-500), var(--orange-400));
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  box-shadow: 0 8px 18px rgba(249, 115, 22, 0.22);
+}
+
+.add-employee-btn i {
+  font-size: 20px;
+}
+
+.employees-filters {
+  display: grid;
+  grid-template-columns: minmax(280px, 1fr) minmax(220px, 365px) minmax(220px, 365px);
+  gap: 20px;
+}
+
+.employee-search,
+.filter-select {
+  height: 48px;
+  border: 1px solid var(--orange-100);
+  border-radius: 12px;
+  background: white;
+  color: var(--gray-700);
+}
+
+.employee-search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+}
+
+.employee-search i {
+  color: var(--gray-400);
+  font-size: 21px;
+}
+
+.employee-search input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  color: var(--gray-700);
+  font-size: 16px;
+  background: transparent;
+}
+
+.employee-search input::placeholder {
+  color: var(--gray-400);
+}
+
+.filter-select {
+  padding: 0 40px 0 24px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.employees-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.view-toggle {
+  display: inline-flex;
+  gap: 10px;
+}
+
+.view-toggle button {
+  height: 50px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--gray-100);
+  color: var(--gray-700);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.view-toggle button.active {
+  background: var(--orange-500);
+  color: white;
+}
+
+.export-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  background: transparent;
+  color: var(--orange-600);
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 8px 12px;
+}
+
+.export-btn i {
+  font-size: 19px;
+}
+
+.employee-directory-card {
+  background: white;
+  border: 1px solid var(--orange-100);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.03);
+}
+
+.employee-directory-table {
+  min-width: 980px;
+}
+
+.directory-row {
+  display: grid;
+  grid-template-columns: minmax(280px, 1.25fr) minmax(150px, 0.75fr) minmax(190px, 0.95fr) minmax(130px, 0.65fr) minmax(180px, 0.85fr) 170px;
+  align-items: center;
+  column-gap: 26px;
+  min-height: 76px;
+  padding: 0 30px;
+  border-bottom: 1px solid var(--orange-50);
+  color: var(--gray-700);
+  font-size: 16px;
+}
+
+.directory-row:last-child {
+  border-bottom: 0;
+}
+
+.directory-header {
+  min-height: 56px;
+  background: var(--gray-50);
+  color: var(--gray-700);
+  font-weight: 700;
+}
+
+.directory-employee {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+}
+
+.directory-employee p {
+  color: var(--gray-900);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.directory-employee span {
+  display: block;
+  color: var(--gray-400);
+  font-size: 14px;
+  margin-top: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.directory-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.directory-actions button {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--gray-400);
+  cursor: pointer;
+}
+
+.directory-actions button:hover {
+  background: var(--orange-50);
+  color: var(--orange-600);
+}
+
+.directory-actions i {
+  font-size: 19px;
+}
+

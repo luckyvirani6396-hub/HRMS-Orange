@@ -5,14 +5,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HRCore - HRMS Dashboard</title>
-  <link rel="stylesheet" href="css/styles-vanilla.css">
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/topbar.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/responsive.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-
 <body>
   <div class="app-container">
-    <!-- Sidebar -->
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-header">
         <div class="logo-container">
@@ -25,97 +29,119 @@
       </div>
 
       <nav class="sidebar-nav">
-        <!-- Main Section -->
         <div class="nav-section">
           <p class="nav-section-title">Main</p>
           <ul class="nav-items">
+
             <li>
-              <button class="nav-item active" data-item="Dashboard" data-page="dashboard">
+              <button class="nav-item active" data-item="Dashboard" data-url="index.html">
                 <i class="material-icons">dashboard</i>
                 <span>Dashboard</span>
               </button>
             </li>
+
             <li>
-              <button class="nav-item" data-item="Employees" data-page="employees">
+              <button class="nav-item" data-item="Employees">
                 <i class="material-icons">groups</i>
                 <span>Employees</span>
               </button>
             </li>
-            <li>
-              <button class="nav-item" data-item="Departments">
-                <i class="material-icons">apartment</i>
-                <span>Departments</span>
+
+            <li class="has-children">
+              <button class="nav-item nav-parent" data-item="Master">
+                <i class="material-icons">tune</i>
+                <span>Master</span>
+                <i class="material-icons nav-arrow">expand_more</i>
               </button>
+              <ul class="sub-nav">
+                <li><button class="nav-item nav-sub" data-item="Designation" data-url="Designation.html"><i
+                      class="material-icons">badge</i><span>Designation</span></button></li>
+                <li><button class="nav-item nav-sub" data-item="Location"><i
+                      class="material-icons">location_on</i><span>Location</span></button></li>
+                <li><button class="nav-item nav-sub" data-item="Grade"><i
+                      class="material-icons">workspace_premium</i><span>Grade</span></button></li>
+                <li><button class="nav-item nav-sub" data-item="Shift"><i
+                      class="material-icons">schedule</i><span>Shift</span></button></li>
+              </ul>
             </li>
+
           </ul>
         </div>
 
-        <!-- Workforce Section -->
         <div class="nav-section">
           <p class="nav-section-title">Workforce</p>
           <ul class="nav-items">
             <li>
               <button class="nav-item" data-item="Attendance">
-                <i class="material-icons">fact_check</i>
-                <span>Attendance</span>
+                <i class="material-icons">fact_check</i><span>Attendance</span>
               </button>
             </li>
-            <li>
-              <button class="nav-item" data-item="Leave">
+            <li class="has-children">
+              <button class="nav-item nav-parent" data-item="Leave">
                 <i class="material-icons">event</i>
                 <span>Leave Management</span>
                 <span class="badge">5</span>
+                <i class="material-icons nav-arrow">expand_more</i>
               </button>
+              <ul class="sub-nav">
+                <li><button class="nav-item nav-sub" data-item="Leave Apply"><i
+                      class="material-icons">add_circle_outline</i><span>Apply Leave</span></button></li>
+                <li><button class="nav-item nav-sub" data-item="Leave Balance"><i
+                      class="material-icons">account_balance_wallet</i><span>Leave Balance</span></button></li>
+                <li><button class="nav-item nav-sub" data-item="Leave Approval"><i
+                      class="material-icons">task_alt</i><span>Approval</span><span class="badge">5</span></button></li>
+              </ul>
             </li>
             <li>
               <button class="nav-item" data-item="Timesheets">
-                <i class="material-icons">schedule</i>
-                <span>Timesheets</span>
+                <i class="material-icons">schedule</i><span>Timesheets</span>
               </button>
             </li>
           </ul>
         </div>
 
-        <!-- Payroll Section -->
         <div class="nav-section">
           <p class="nav-section-title">Payroll</p>
           <ul class="nav-items">
-            <li>
-              <button class="nav-item" data-item="Payroll">
+            <li class="has-children">
+              <button class="nav-item nav-parent" data-item="Payroll">
                 <i class="material-icons">payments</i>
                 <span>Payroll</span>
+                <i class="material-icons nav-arrow">expand_more</i>
               </button>
+              <ul class="sub-nav">
+                <li><button class="nav-item nav-sub" data-item="Run Payroll"><i
+                      class="material-icons">play_circle_outline</i><span>Run Payroll</span></button></li>
+                <li><button class="nav-item nav-sub" data-item="Salary Slips"><i
+                      class="material-icons">receipt_long</i><span>Salary Slips</span></button></li>
+                <li><button class="nav-item nav-sub" data-item="Tax"><i
+                      class="material-icons">account_balance</i><span>Tax & Deductions</span></button></li>
+              </ul>
             </li>
             <li>
               <button class="nav-item" data-item="Reports">
-                <i class="material-icons">description</i>
-                <span>Reports</span>
+                <i class="material-icons">description</i><span>Reports</span>
               </button>
             </li>
             <li>
               <button class="nav-item" data-item="Performance">
-                <i class="material-icons">emoji_events</i>
-                <span>Performance</span>
+                <i class="material-icons">emoji_events</i><span>Performance</span>
               </button>
             </li>
           </ul>
         </div>
 
-        <!-- Analytics Section -->
         <div class="nav-section">
           <p class="nav-section-title">Analytics</p>
           <ul class="nav-items">
             <li>
               <button class="nav-item" data-item="Analytics">
-                <i class="material-icons">bar_chart</i>
-                <span>Analytics</span>
+                <i class="material-icons">bar_chart</i><span>Analytics</span>
               </button>
             </li>
             <li>
               <button class="nav-item" data-item="Notifications">
-                <i class="material-icons">notifications</i>
-                <span>Notifications</span>
-                <span class="badge">3</span>
+                <i class="material-icons">notifications</i><span>Notifications</span><span class="badge">3</span>
               </button>
             </li>
           </ul>
@@ -123,63 +149,46 @@
       </nav>
 
       <div class="sidebar-footer">
-        <button class="sidebar-btn">
-          <i class="material-icons">settings</i>
-          <span>Settings</span>
-        </button>
-        <button class="sidebar-btn">
-          <i class="material-icons">help</i>
-          <span>Help & Support</span>
-        </button>
+        <button class="sidebar-btn"><i class="material-icons">settings</i><span>Settings</span></button>
+        <button class="sidebar-btn"><i class="material-icons">help</i><span>Help & Support</span></button>
       </div>
     </aside>
 
-    <!-- Main Content -->
     <div class="main-wrapper">
-      <!-- Top Bar -->
       <header class="topbar">
         <div class="topbar-left">
-          <div class="topbar-heading">
+          <h1 class="topbar-title">Dashboard</h1>
+          <!-- <div class="topbar-heading">
             <div class="topbar-logo-container">
-              <div class="logo-badge">
-                <i class="material-icons">apartment</i>
-              </div>
+              <div class="logo-badge"><i class="material-icons">apartment</i></div>
               <div class="logo-text">
                 <p class="logo-title">HRCore</p>
                 <p class="logo-subtitle">Management Suite</p>
               </div>
             </div>
-          </div>
+          </div> -->
+        </div>
+        <div class="topbar-right">
           <div class="search-container">
             <i class="material-icons">search</i>
             <input type="text" placeholder="Search employees, reports...">
           </div>
-
-        </div>
-
-        <div class="topbar-right">
           <div class="date-badge">
             <i class="material-icons">calendar_today</i>
-            <span id="currentDate">April 17, 2026</span>
+            <span id="currentDate">April 23,2026</span>
           </div>
-
-          <button class="icon-btn" aria-label="Toggle theme">
-            <i class="material-icons">light_mode</i>
-          </button>
-
+          <button class="icon-btn" aria-label="Toggle theme"><i class="material-icons">light_mode</i></button>
           <div class="profile-container">
             <button class="profile-btn" id="profileBtn" aria-label="Open profile menu">
               <div class="avatar">A</div>
               <div class="profile-info">
-                <p>Admin User</p>
-                <span>HR Manager</span>
+                <p>Admin User</p><span>HR Manager</span>
               </div>
               <i class="material-icons">expand_more</i>
             </button>
             <div class="profile-dropdown" id="profileDropdown">
               <div class="dropdown-header">
-                <p>Admin User</p>
-                <span>admin@hrcore.com</span>
+                <p>Admin User</p><span>admin@hrcore.com</span>
               </div>
               <button>My Profile</button>
               <button>Account Settings</button>
@@ -189,33 +198,30 @@
         </div>
       </header>
 
-      <!-- Dashboard Content -->
       <main class="dashboard page-view active" id="dashboardPage">
         <!-- Header -->
-        <div class="dashboard-header">
+        <!-- <div class="dashboard-header">
           <div>
             <h1 class="dashboard-title">Good morning, Admin <span class="wave">👋</span></h1>
             <p class="dashboard-subtitle">Here's what's happening in your organization today.</p>
           </div>
           <button class="report-btn">Generate Report</button>
-        </div>
+        </div> -->
 
         <!-- Stats Grid -->
         <div class="stats-grid">
 
           <!-- 1. Total Employees -->
           <div class="stats-card c1">
-            <div class="card-header">
-              <div class="icon-box green">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#3B6D11" stroke-width="1.8">
-                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                  <circle cx="9" cy="7" r="4" />
-                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                </svg>
-              </div>
-              <span class="trend-badge up">↑ +12 this month</span>
+            <div class="icon-box green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#3B6D11" stroke-width="1.8">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
             </div>
+            <!-- <span class="trend-badge up">↑ +12 this month</span> -->
             <div class="card-body">
               <p class="card-value">406</p>
               <p class="card-label">Total Employees</p>
@@ -225,14 +231,11 @@
 
           <!-- 2. Present Today -->
           <div class="stats-card c2">
-            <div class="card-header">
-              <div class="icon-box blue">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="1.8">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                  <polyline points="22 4 12 14.01 9 11.01" />
-                </svg>
-              </div>
-              <span class="trend-badge up">↑ +3.2%</span>
+            <div class="icon-box blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="1.8">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
             </div>
             <div class="card-body">
               <p class="card-value">364</p>
@@ -243,15 +246,12 @@
 
           <!-- 3. Today's Absent -->
           <div class="stats-card c3">
-            <div class="card-header">
-              <div class="icon-box red">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#A32D2D" stroke-width="1.8">
-                  <circle cx="12" cy="12" r="10" />
-                  <line x1="15" y1="9" x2="9" y2="15" />
-                  <line x1="9" y1="9" x2="15" y2="15" />
-                </svg>
-              </div>
-              <span class="trend-badge down">↑ +4 vs yest.</span>
+            <div class="icon-box red">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#A32D2D" stroke-width="1.8">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="15" y1="9" x2="9" y2="15" />
+                <line x1="9" y1="9" x2="15" y2="15" />
+              </svg>
             </div>
             <div class="card-body">
               <p class="card-value">28</p>
@@ -262,17 +262,14 @@
 
           <!-- 4. On Leave (Approved) -->
           <div class="stats-card c4">
-            <div class="card-header">
-              <div class="icon-box amber">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#854F0B" stroke-width="1.8">
-                  <rect x="3" y="4" width="18" height="18" rx="2" />
-                  <line x1="16" y1="2" x2="16" y2="6" />
-                  <line x1="8" y1="2" x2="8" y2="6" />
-                  <line x1="3" y1="10" x2="21" y2="10" />
-                  <path d="M9 16l2 2 4-4" />
-                </svg>
-              </div>
-              <span class="trend-badge neutral">– 5 vs yest.</span>
+            <div class="icon-box amber">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#854F0B" stroke-width="1.8">
+                <rect x="3" y="4" width="18" height="18" rx="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+                <path d="M9 16l2 2 4-4" />
+              </svg>
             </div>
             <div class="card-body">
               <p class="card-value">42</p>
@@ -283,14 +280,11 @@
 
           <!-- 5. Work From Home -->
           <div class="stats-card c5">
-            <div class="card-header">
-              <div class="icon-box pink">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#993556" stroke-width="1.8">
-                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                  <polyline points="9 22 9 12 15 12 15 22" />
-                </svg>
-              </div>
-              <span class="trend-badge up">↑ +8 today</span>
+            <div class="icon-box pink">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#993556" stroke-width="1.8">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
             </div>
             <div class="card-body">
               <p class="card-value">56</p>
@@ -301,14 +295,11 @@
 
           <!-- 6. Weekly Off -->
           <div class="stats-card c6">
-            <div class="card-header">
-              <div class="icon-box purple">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="1.8">
-                  <circle cx="12" cy="12" r="10" />
-                  <polyline points="12 6 12 12 16 14" />
-                </svg>
-              </div>
-              <span class="trend-badge neutral">Sat + Sun</span>
+            <div class="icon-box purple">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="1.8">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
             </div>
             <div class="card-body">
               <p class="card-value">14</p>
@@ -319,17 +310,14 @@
 
           <!-- 7. In Notice Period -->
           <div class="stats-card c7">
-            <div class="card-header">
-              <div class="icon-box teal">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="1.8">
-                  <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
-                  <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
-                  <line x1="6" y1="1" x2="6" y2="4" />
-                  <line x1="10" y1="1" x2="10" y2="4" />
-                  <line x1="14" y1="1" x2="14" y2="4" />
-                </svg>
-              </div>
-              <span class="trend-badge down">↑ +2 this wk</span>
+            <div class="icon-box teal">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="1.8">
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
+                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
+                <line x1="6" y1="1" x2="6" y2="4" />
+                <line x1="10" y1="1" x2="10" y2="4" />
+                <line x1="14" y1="1" x2="14" y2="4" />
+              </svg>
             </div>
             <div class="card-body">
               <p class="card-value">9</p>
@@ -340,16 +328,13 @@
 
           <!-- 8. Probation Period -->
           <div class="stats-card c8">
-            <div class="card-header">
-              <div class="icon-box coral">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#993C1D" stroke-width="1.8">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                  <polyline points="14 2 14 8 20 8" />
-                  <line x1="16" y1="13" x2="8" y2="13" />
-                  <line x1="16" y1="17" x2="8" y2="17" />
-                </svg>
-              </div>
-              <span class="trend-badge neutral">Active</span>
+            <div class="icon-box coral">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#993C1D" stroke-width="1.8">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+              </svg>
             </div>
             <div class="card-body">
               <p class="card-value">23</p>
@@ -360,15 +345,12 @@
 
           <!-- 9. Expired Probation -->
           <div class="stats-card c9">
-            <div class="card-header">
-              <div class="icon-box red">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#A32D2D" stroke-width="1.8">
-                  <circle cx="12" cy="12" r="10" />
-                  <line x1="12" y1="8" x2="12" y2="12" />
-                  <line x1="12" y1="16" x2="12.01" y2="16" />
-                </svg>
-              </div>
-              <span class="trend-badge down">Action needed</span>
+            <div class="icon-box red">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#A32D2D" stroke-width="1.8">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" y1="8" x2="12" y2="12" />
+                <line x1="12" y1="16" x2="12.01" y2="16" />
+              </svg>
             </div>
             <div class="card-body">
               <p class="card-value">6</p>
@@ -379,16 +361,13 @@
 
           <!-- 10. Pending Docs -->
           <div class="stats-card c10">
-            <div class="card-header">
-              <div class="icon-box amber">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#854F0B" stroke-width="1.8">
-                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
-                  <polyline points="14 2 14 8 20 8" />
-                  <line x1="16" y1="13" x2="8" y2="13" />
-                  <line x1="13" y1="17" x2="8" y2="17" />
-                </svg>
-              </div>
-              <span class="trend-badge down">↑ +3 new</span>
+            <div class="icon-box amber">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#854F0B" stroke-width="1.8">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="13" y1="17" x2="8" y2="17" />
+              </svg>
             </div>
             <div class="card-body">
               <p class="card-value">31</p>
@@ -399,16 +378,13 @@
 
           <!-- 11. App Download Status -->
           <div class="stats-card c11">
-            <div class="card-header">
-              <div class="icon-box blue">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="1.8">
-                  <rect x="5" y="2" width="14" height="20" rx="2" />
-                  <line x1="12" y1="18" x2="12.01" y2="18" stroke-linecap="round" stroke-width="2.5" />
-                  <path d="M9 10l3 3 3-3" />
-                  <line x1="12" y1="7" x2="12" y2="13" />
-                </svg>
-              </div>
-              <span class="trend-badge up">↑ 71.4%</span>
+            <div class="icon-box blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="1.8">
+                <rect x="5" y="2" width="14" height="20" rx="2" />
+                <line x1="12" y1="18" x2="12.01" y2="18" stroke-linecap="round" stroke-width="2.5" />
+                <path d="M9 10l3 3 3-3" />
+                <line x1="12" y1="7" x2="12" y2="13" />
+              </svg>
             </div>
             <div class="card-body">
               <p class="card-value">290</p>
@@ -419,14 +395,11 @@
 
           <!-- 12. EPF Nominees -->
           <div class="stats-card c12">
-            <div class="card-header">
-              <div class="icon-box coral">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#993C1D" stroke-width="1.8">
-                  <path
-                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
-                </svg>
-              </div>
-              <span class="trend-badge down">58.1% done</span>
+            <div class="icon-box coral">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#993C1D" stroke-width="1.8">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
             </div>
             <div class="card-body">
               <p class="card-value">236</p>
@@ -437,14 +410,11 @@
 
           <!-- 13. Monthly Payroll -->
           <div class="stats-card c13">
-            <div class="card-header">
-              <div class="icon-box purple">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="1.8">
-                  <line x1="12" y1="1" x2="12" y2="23" />
-                  <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-                </svg>
-              </div>
-              <span class="trend-badge up">↑ +2.8%</span>
+            <div class="icon-box purple">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="1.8">
+                <line x1="12" y1="1" x2="12" y2="23" />
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+              </svg>
             </div>
             <div class="card-body">
               <p class="card-value">$284K</p>
@@ -455,13 +425,10 @@
 
           <!-- 14. Avg Performance -->
           <div class="stats-card c14">
-            <div class="card-header">
-              <div class="icon-box pink">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#993556" stroke-width="1.8">
-                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
-                </svg>
-              </div>
-              <span class="trend-badge up">↑ +4.1%</span>
+            <div class="icon-box pink">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#993556" stroke-width="1.8">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+              </svg>
             </div>
             <div class="card-body">
               <p class="card-value">87.4%</p>
@@ -472,14 +439,11 @@
 
           <!-- 15. Avg Work Hours -->
           <div class="stats-card c15">
-            <div class="card-header">
-              <div class="icon-box teal">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="1.8">
-                  <circle cx="12" cy="12" r="10" />
-                  <polyline points="12 6 12 12 16 14" />
-                </svg>
-              </div>
-              <span class="trend-badge down">↓ –0.3h</span>
+            <div class="icon-box teal">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="1.8">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
             </div>
             <div class="card-body">
               <p class="card-value">7.8h</p>
@@ -490,14 +454,11 @@
 
           <!-- 16. EPF Declaration Changes -->
           <div class="stats-card c16">
-            <div class="card-header">
-              <div class="icon-box gray">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#5F5E5A" stroke-width="1.8">
-                  <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
-                  <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
-                </svg>
-              </div>
-              <span class="trend-badge neutral">This quarter</span>
+            <div class="icon-box gray">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#5F5E5A" stroke-width="1.8">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+              </svg>
             </div>
             <div class="card-body">
               <p class="card-value">47</p>
@@ -675,7 +636,6 @@
                 <div><span class="dept-label">Design</span></div>
                 <div><span class="status-badge active">Active</span></div>
                 <div><span class="joined-date">Apr 10</span></div>
-                <div><button class="more-btn" aria-label="More actions for Sarah Johnson"><i class="material-icons">more_horiz</i></button></div>
               </div>
               <div class="employee-row">
                 <div class="employee-info">
@@ -688,7 +648,6 @@
                 <div><span class="dept-label">Engineering</span></div>
                 <div><span class="status-badge active">Active</span></div>
                 <div><span class="joined-date">Apr 8</span></div>
-                <div><button class="more-btn" aria-label="More actions for Marcus Chen"><i class="material-icons">more_horiz</i></button></div>
               </div>
               <div class="employee-row">
                 <div class="employee-info">
@@ -701,7 +660,6 @@
                 <div><span class="dept-label">Marketing</span></div>
                 <div><span class="status-badge leave">On Leave</span></div>
                 <div><span class="joined-date">Apr 5</span></div>
-                <div><button class="more-btn" aria-label="More actions for Emily Rodriguez"><i class="material-icons">more_horiz</i></button></div>
               </div>
               <div class="employee-row">
                 <div class="employee-info">
@@ -714,7 +672,6 @@
                 <div><span class="dept-label">Product</span></div>
                 <div><span class="status-badge active">Active</span></div>
                 <div><span class="joined-date">Apr 3</span></div>
-                <div><button class="more-btn" aria-label="More actions for David Kim"><i class="material-icons">more_horiz</i></button></div>
               </div>
               <div class="employee-row">
                 <div class="employee-info">
@@ -727,7 +684,6 @@
                 <div><span class="dept-label">Analytics</span></div>
                 <div><span class="status-badge active">Active</span></div>
                 <div><span class="joined-date">Apr 1</span></div>
-                <div><button class="more-btn" aria-label="More actions for Priya Patel"><i class="material-icons">more_horiz</i></button></div>
               </div>
             </div>
           </div>
@@ -877,158 +833,12 @@
           </div>
         </div>
       </main>
-
-      <main class="employees-page page-view" id="employeesPage">
-        <div class="employees-header">
-          <div>
-            <h1 class="employees-title">Employees</h1>
-            <p class="employees-subtitle">Manage your team members and their information</p>
-          </div>
-          <button class="add-employee-btn">
-            <i class="material-icons">add</i>
-            <span>Add New Employee</span>
-          </button>
-        </div>
-
-        <div class="employees-filters">
-          <label class="employee-search" for="employeeSearch">
-            <i class="material-icons">search</i>
-            <input id="employeeSearch" type="search" placeholder="Search by name or email...">
-          </label>
-          <select class="filter-select" aria-label="Filter by department">
-            <option>All Departments</option>
-            <option>Design</option>
-            <option>Engineering</option>
-            <option>Marketing</option>
-            <option>Product</option>
-            <option>Analytics</option>
-          </select>
-          <select class="filter-select" aria-label="Filter by status">
-            <option>All Status</option>
-            <option>Active</option>
-            <option>On Leave</option>
-            <option>Inactive</option>
-          </select>
-        </div>
-
-        <div class="employees-toolbar">
-          <div class="view-toggle">
-            <button class="active">Table</button>
-            <button>Grid</button>
-          </div>
-          <button class="export-btn">
-            <i class="material-icons">file_download</i>
-            <span>Export</span>
-          </button>
-        </div>
-
-        <div class="employee-directory-card">
-          <div class="employee-directory-table">
-            <div class="directory-row directory-header">
-              <div>Employee</div>
-              <div>Department</div>
-              <div>Position</div>
-              <div>Status</div>
-              <div>Join Date</div>
-              <div>Actions</div>
-            </div>
-            <div class="directory-row">
-              <div class="directory-employee">
-                <div class="avatar orange">SJ</div>
-                <div>
-                  <p>Sarah Johnson</p>
-                  <span>sarah.johnson@hrcore.com</span>
-                </div>
-              </div>
-              <div><span class="dept-label">Design</span></div>
-              <div>UI/UX Designer</div>
-              <div><span class="status-badge active">Active</span></div>
-              <div>Apr 10, 2024</div>
-              <div class="directory-actions">
-                <button aria-label="View Sarah Johnson card"><i class="material-icons">credit_card</i></button>
-                <button aria-label="Delete Sarah Johnson"><i class="material-icons">delete_outline</i></button>
-                <button aria-label="More actions for Sarah Johnson"><i class="material-icons">more_horiz</i></button>
-              </div>
-            </div>
-            <div class="directory-row">
-              <div class="directory-employee">
-                <div class="avatar blue">MC</div>
-                <div>
-                  <p>Marcus Chen</p>
-                  <span>marcus.chen@hrcore.com</span>
-                </div>
-              </div>
-              <div><span class="dept-label">Engineering</span></div>
-              <div>Backend Developer</div>
-              <div><span class="status-badge active">Active</span></div>
-              <div>Aug 15, 2023</div>
-              <div class="directory-actions">
-                <button aria-label="View Marcus Chen card"><i class="material-icons">credit_card</i></button>
-                <button aria-label="Delete Marcus Chen"><i class="material-icons">delete_outline</i></button>
-                <button aria-label="More actions for Marcus Chen"><i class="material-icons">more_horiz</i></button>
-              </div>
-            </div>
-            <div class="directory-row">
-              <div class="directory-employee">
-                <div class="avatar green">ER</div>
-                <div>
-                  <p>Emily Rodriguez</p>
-                  <span>emily.rodriguez@hrcore.com</span>
-                </div>
-              </div>
-              <div><span class="dept-label">Marketing</span></div>
-              <div>Marketing Lead</div>
-              <div><span class="status-badge leave">On Leave</span></div>
-              <div>May 20, 2023</div>
-              <div class="directory-actions">
-                <button aria-label="View Emily Rodriguez card"><i class="material-icons">credit_card</i></button>
-                <button aria-label="Delete Emily Rodriguez"><i class="material-icons">delete_outline</i></button>
-                <button aria-label="More actions for Emily Rodriguez"><i class="material-icons">more_horiz</i></button>
-              </div>
-            </div>
-            <div class="directory-row">
-              <div class="directory-employee">
-                <div class="avatar pink">DK</div>
-                <div>
-                  <p>David Kim</p>
-                  <span>david.kim@hrcore.com</span>
-                </div>
-              </div>
-              <div><span class="dept-label">Product</span></div>
-              <div>Product Manager</div>
-              <div><span class="status-badge active">Active</span></div>
-              <div>Jan 10, 2023</div>
-              <div class="directory-actions">
-                <button aria-label="View David Kim card"><i class="material-icons">credit_card</i></button>
-                <button aria-label="Delete David Kim"><i class="material-icons">delete_outline</i></button>
-                <button aria-label="More actions for David Kim"><i class="material-icons">more_horiz</i></button>
-              </div>
-            </div>
-            <div class="directory-row">
-              <div class="directory-employee">
-                <div class="avatar teal">PP</div>
-                <div>
-                  <p>Priya Patel</p>
-                  <span>priya.patel@hrcore.com</span>
-                </div>
-              </div>
-              <div><span class="dept-label">Analytics</span></div>
-              <div>Data Analyst</div>
-              <div><span class="status-badge active">Active</span></div>
-              <div>Jun 05, 2024</div>
-              <div class="directory-actions">
-                <button aria-label="View Priya Patel card"><i class="material-icons">credit_card</i></button>
-                <button aria-label="Delete Priya Patel"><i class="material-icons">delete_outline</i></button>
-                <button aria-label="More actions for Priya Patel"><i class="material-icons">more_horiz</i></button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
     </div>
   </div>
 
-  <script src="js/script-vanilla.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/dashboard.js"></script>
 </body>
 
 </html>

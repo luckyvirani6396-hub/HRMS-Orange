@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HRCore - Employees</title>
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/topbar.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/employees.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-container">
+          <img src="./assets/images/Synergy-logo.png" alt="Synergy HRMS" class="logo-full">
+          <img src="./assets/images/synergyIcon (2).png" alt="Synergy" class="logo-icon" />
+        </div>
+        <button class="toggle-btn" id="toggleSidebar" aria-label="Collapse sidebar">
+          <i class="material-icons" id="toggleIcon">chevron_left</i>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <p class="nav-section-title">Main</p>
+          <ul class="nav-items">
+            <li>
+              <button class="nav-item" data-item="Dashboard" data-url="index.html">
+                <i class="material-icons">dashboard</i>
+                <span>Dashboard</span>
+              </button>
+            </li>
+            <li>
+              <button class="nav-item active" data-item="Employees" data-url="employees.html">
+                <i class="material-icons">groups</i>
+                <span>Employees</span>
+              </button>
+            </li>
+            <li>
+              <button class="nav-item" data-item="Departments">
+                <i class="material-icons">apartment</i>
+                <span>Departments</span>
+              </button>
+            </li>
+            <li class="has-children">
+              <button class="nav-item nav-parent" data-item="Master">
+                <i class="material-icons">tune</i>
+                <span>Master</span>
+                <i class="material-icons nav-arrow">expand_more</i>
+              </button>
+              <ul class="sub-nav">
+                <li><button class="nav-item nav-sub" data-item="Designation" data-url="Designation.html"><i
+                      class="material-icons">badge</i><span>Designation</span></button></li>
+                <li><button class="nav-item nav-sub" data-item="Location"><i
+                      class="material-icons">location_on</i><span>Location</span></button></li>
+                <li><button class="nav-item nav-sub" data-item="Grade"><i
+                      class="material-icons">workspace_premium</i><span>Grade</span></button></li>
+                <li><button class="nav-item nav-sub" data-item="Shift"><i
+                      class="material-icons">schedule</i><span>Shift</span></button></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-section">
+          <p class="nav-section-title">Workforce</p>
+          <ul class="nav-items">
+            <li><button class="nav-item" data-item="Attendance"><i class="material-icons">fact_check</i><span>Attendance</span></button></li>
+            <li class="has-children">
+              <button class="nav-item nav-parent" data-item="Leave">
+                <i class="material-icons">event</i>
+                <span>Leave Management</span>
+                <span class="badge">5</span>
+                <i class="material-icons nav-arrow">expand_more</i>
+              </button>
+              <ul class="sub-nav">
+                <li><button class="nav-item nav-sub" data-item="Leave Apply"><i
+                      class="material-icons">add_circle_outline</i><span>Apply Leave</span></button></li>
+                <li><button class="nav-item nav-sub" data-item="Leave Balance"><i
+                      class="material-icons">account_balance_wallet</i><span>Leave Balance</span></button></li>
+                <li><button class="nav-item nav-sub" data-item="Leave Approval"><i
+                      class="material-icons">task_alt</i><span>Approval</span><span class="badge">5</span></button></li>
+              </ul>
+            </li>
+            <li><button class="nav-item" data-item="Timesheets"><i class="material-icons">schedule</i><span>Timesheets</span></button></li>
+          </ul>
+        </div>
+
+        <div class="nav-section">
+          <p class="nav-section-title">Payroll</p>
+          <ul class="nav-items">
+            <li class="has-children">
+              <button class="nav-item nav-parent" data-item="Payroll">
+                <i class="material-icons">payments</i>
+                <span>Payroll</span>
+                <i class="material-icons nav-arrow">expand_more</i>
+              </button>
+              <ul class="sub-nav">
+                <li><button class="nav-item nav-sub" data-item="Run Payroll"><i
+                      class="material-icons">play_circle_outline</i><span>Run Payroll</span></button></li>
+                <li><button class="nav-item nav-sub" data-item="Salary Slips"><i
+                      class="material-icons">receipt_long</i><span>Salary Slips</span></button></li>
+                <li><button class="nav-item nav-sub" data-item="Tax"><i
+                      class="material-icons">account_balance</i><span>Tax & Deductions</span></button></li>
+              </ul>
+            </li>
+            <li><button class="nav-item" data-item="Reports"><i class="material-icons">description</i><span>Reports</span></button></li>
+            <li><button class="nav-item" data-item="Performance"><i class="material-icons">emoji_events</i><span>Performance</span></button></li>
+          </ul>
+        </div>
+
+        <div class="nav-section">
+          <p class="nav-section-title">Analytics</p>
+          <ul class="nav-items">
+            <li><button class="nav-item" data-item="Analytics"><i class="material-icons">bar_chart</i><span>Analytics</span></button></li>
+            <li><button class="nav-item" data-item="Notifications"><i class="material-icons">notifications</i><span>Notifications</span><span class="badge">3</span></button></li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="sidebar-btn"><i class="material-icons">settings</i><span>Settings</span></button>
+        <button class="sidebar-btn"><i class="material-icons">help</i><span>Help & Support</span></button>
+      </div>
+    </aside>
+
+    <div class="main-wrapper">
+      <header class="topbar">
+        <div class="topbar-left">
+          <div class="topbar-heading">
+            <div class="topbar-logo-container">
+              <div class="logo-badge"><i class="material-icons">apartment</i></div>
+              <div class="logo-text"><p class="logo-title">HRCore</p><p class="logo-subtitle">Management Suite</p></div>
+            </div>
+          </div>
+          <div class="search-container"><i class="material-icons">search</i><input type="text" placeholder="Search employees, reports..."></div>
+        </div>
+        <div class="topbar-right">
+          <div class="date-badge"><i class="material-icons">calendar_today</i><span id="currentDate">April 23, 2026</span></div>
+          <button class="icon-btn" aria-label="Toggle theme"><i class="material-icons">light_mode</i></button>
+          <div class="profile-container">
+            <button class="profile-btn" id="profileBtn" aria-label="Open profile menu">
+              <div class="avatar">A</div>
+              <div class="profile-info"><p>Admin User</p><span>HR Manager</span></div>
+              <i class="material-icons">expand_more</i>
+            </button>
+            <div class="profile-dropdown" id="profileDropdown">
+              <div class="dropdown-header"><p>Admin User</p><span>admin@hrcore.com</span></div>
+              <button>My Profile</button>
+              <button>Account Settings</button>
+              <button class="sign-out">Sign Out</button>
+            </div>
+          </div>
+        </div>
+      </header>
+      <main class="employees-page page-view active" id="employeesPage">
+        <div class="employees-header">
+          <div>
+            <h1 class="employees-title">Employees</h1>
+            <p class="employees-subtitle">Manage your team members and their information</p>
+          </div>
+          <button class="add-employee-btn"><i class="material-icons">add</i><span>Add New Employee</span></button>
+        </div>
+
+        <div class="employees-filters">
+          <label class="employee-search" for="employeeSearch"><i class="material-icons">search</i><input id="employeeSearch" type="search" placeholder="Search by name or email..."></label>
+          <select class="filter-select" aria-label="Filter by department"><option>All Departments</option><option>Design</option><option>Engineering</option><option>Marketing</option><option>Product</option><option>Analytics</option></select>
+          <select class="filter-select" aria-label="Filter by status"><option>All Status</option><option>Active</option><option>On Leave</option><option>Inactive</option></select>
+        </div>
+
+        <div class="employees-toolbar">
+          <div class="view-toggle"><button class="active">Table</button><button>Grid</button></div>
+          <button class="export-btn"><i class="material-icons">file_download</i><span>Export</span></button>
+        </div>
+
+        <div class="employee-directory-card">
+          <div class="employee-directory-table">
+            <div class="directory-row directory-header"><div>Employee</div><div>Department</div><div>Position</div><div>Status</div><div>Join Date</div><div>Actions</div></div>
+            <div class="directory-row"><div class="directory-employee"><div class="avatar orange">SJ</div><div><p>Sarah Johnson</p><span>sarah.johnson@hrcore.com</span></div></div><div><span class="dept-label">Design</span></div><div>UI/UX Designer</div><div><span class="status-badge active">Active</span></div><div>Apr 10, 2024</div><div class="directory-actions"><button aria-label="View Sarah Johnson card"><i class="material-icons">credit_card</i></button><button aria-label="Delete Sarah Johnson"><i class="material-icons">delete_outline</i></button><button aria-label="More actions for Sarah Johnson"><i class="material-icons">more_horiz</i></button></div></div>
+            <div class="directory-row"><div class="directory-employee"><div class="avatar blue">MC</div><div><p>Marcus Chen</p><span>marcus.chen@hrcore.com</span></div></div><div><span class="dept-label">Engineering</span></div><div>Backend Developer</div><div><span class="status-badge active">Active</span></div><div>Aug 15, 2023</div><div class="directory-actions"><button aria-label="View Marcus Chen card"><i class="material-icons">credit_card</i></button><button aria-label="Delete Marcus Chen"><i class="material-icons">delete_outline</i></button><button aria-label="More actions for Marcus Chen"><i class="material-icons">more_horiz</i></button></div></div>
+            <div class="directory-row"><div class="directory-employee"><div class="avatar green">ER</div><div><p>Emily Rodriguez</p><span>emily.rodriguez@hrcore.com</span></div></div><div><span class="dept-label">Marketing</span></div><div>Marketing Lead</div><div><span class="status-badge leave">On Leave</span></div><div>May 20, 2023</div><div class="directory-actions"><button aria-label="View Emily Rodriguez card"><i class="material-icons">credit_card</i></button><button aria-label="Delete Emily Rodriguez"><i class="material-icons">delete_outline</i></button><button aria-label="More actions for Emily Rodriguez"><i class="material-icons">more_horiz</i></button></div></div>
+            <div class="directory-row"><div class="directory-employee"><div class="avatar pink">DK</div><div><p>David Kim</p><span>david.kim@hrcore.com</span></div></div><div><span class="dept-label">Product</span></div><div>Product Manager</div><div><span class="status-badge active">Active</span></div><div>Jan 10, 2023</div><div class="directory-actions"><button aria-label="View David Kim card"><i class="material-icons">credit_card</i></button><button aria-label="Delete David Kim"><i class="material-icons">delete_outline</i></button><button aria-label="More actions for David Kim"><i class="material-icons">more_horiz</i></button></div></div>
+            <div class="directory-row"><div class="directory-employee"><div class="avatar teal">PP</div><div><p>Priya Patel</p><span>priya.patel@hrcore.com</span></div></div><div><span class="dept-label">Analytics</span></div><div>Data Analyst</div><div><span class="status-badge active">Active</span></div><div>Jun 05, 2024</div><div class="directory-actions"><button aria-label="View Priya Patel card"><i class="material-icons">credit_card</i></button><button aria-label="Delete Priya Patel"><i class="material-icons">delete_outline</i></button><button aria-label="More actions for Priya Patel"><i class="material-icons">more_horiz</i></button></div></div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/employees.js"></script>
+</body>
+
+</html>
