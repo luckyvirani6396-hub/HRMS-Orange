@@ -4,9 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HRCore - Master</title> 
-   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">  -->
-    <link rel="stylesheet" href="css/base.css">
+  <title>HRCore - Master</title>
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">  -->
+  <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/sidebar.css">
   <link rel="stylesheet" href="css/topbar.css">
   <link rel="stylesheet" href="css/components.css">
@@ -317,28 +317,26 @@
             </button>
           </div>
           <div class="modal-body">
+            <label class="modal-field-full">
+              <span>Designation Name</span>
+              <input id="masterNameInput" type="text" placeholder="Enter designation name">
+            </label>
             <label>
               <span>Code</span>
               <input id="masterCodeInput" type="text" placeholder="Enter designation code">
             </label>
 
+            <label class="modal-field">
+              <span>Description</span>
+              <input id="descriptionInput" type="text" placeholder="Optional note">
+            </label>
 
-            <label>
+            <label class="modal-field-full">
               <span>Status</span>
               <select id="masterStatusInput">
                 <option value="Active">Active</option>
                 <option value="Inactive">Inactive</option>
               </select>
-            </label>
-
-            <label class="modal-field-full">
-              <span>Designation Name</span>
-              <input id="masterNameInput" type="text" placeholder="Enter designation name">
-            </label>
-
-            <label class="modal-field-full">
-              <span>Description</span>
-              <input id="descriptionInput" type="text" placeholder="Optional note">
             </label>
 
           </div>
