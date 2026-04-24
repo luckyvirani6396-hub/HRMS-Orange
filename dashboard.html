@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HRCore - HRMS Dashboard</title>
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/topbar.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+  <div class="app-container">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-container">
+          <img src="./assets/images/Synergy-logo.png" alt="Synergy HRMS" class="logo-full">
+          <img src="./assets/images/synergyIcon (2).png" alt="Synergy" class="logo-icon" />
+        </div>
+        <button class="toggle-btn" id="toggleSidebar" aria-label="Collapse sidebar">
+          <i class="material-icons" id="toggleIcon">chevron_left</i>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <p class="nav-section-title">Main</p>
+          <ul class="nav-items">
+
+            <li>
+              <button class="nav-item active" data-item="Dashboard" data-url="dashboard.html">
+                <i class="material-icons">dashboard</i>
+                <span>Dashboard</span>
+              </button>
+            </li>
+
+            <li>
+              <button class="nav-item" data-item="Employees">
+                <i class="material-icons">groups</i>
+                <span>Employees</span>
+              </button>
+            </li>
+
+            <li class="has-children">
+              <button class="nav-item nav-parent" data-item="Master">
+                <i class="material-icons">tune</i>
+                <span>Master</span>
+                <i class="material-icons nav-arrow">expand_more</i>
+              </button>
+              <ul class="sub-nav">
+                <li><button class="nav-item nav-sub" data-item="Designation" data-url="Designation.html"><i
+                      class="material-icons">badge</i><span>Designation</span></button></li>
+                <li><button class="nav-item nav-sub" data-item="Location"><i
+                      class="material-icons">location_on</i><span>Location</span></button></li>
+                <li><button class="nav-item nav-sub" data-item="Grade"><i
+                      class="material-icons">workspace_premium</i><span>Grade</span></button></li>
+                <li><button class="nav-item nav-sub" data-item="Shift"><i
+                      class="material-icons">schedule</i><span>Shift</span></button></li>
+              </ul>
+            </li>
+
+          </ul>
+        </div>
+
+        <div class="nav-section">
+          <p class="nav-section-title">Workforce</p>
+          <ul class="nav-items">
+            <li>
+              <button class="nav-item" data-item="Attendance">
+                <i class="material-icons">fact_check</i><span>Attendance</span>
+              </button>
+            </li>
+            <li class="has-children">
+              <button class="nav-item nav-parent" data-item="Leave">
+                <i class="material-icons">event</i>
+                <span>Leave Management</span>
+                <span class="badge">5</span>
+                <i class="material-icons nav-arrow">expand_more</i>
+              </button>
+              <ul class="sub-nav">
+                <li><button class="nav-item nav-sub" data-item="Leave Apply"><i
+                      class="material-icons">add_circle_outline</i><span>Apply Leave</span></button></li>
+                <li><button class="nav-item nav-sub" data-item="Leave Balance"><i
+                      class="material-icons">account_balance_wallet</i><span>Leave Balance</span></button></li>
+                <li><button class="nav-item nav-sub" data-item="Leave Approval"><i
+                      class="material-icons">task_alt</i><span>Approval</span><span class="badge">5</span></button></li>
+              </ul>
+            </li>
+            <li>
+              <button class="nav-item" data-item="Timesheets">
+                <i class="material-icons">schedule</i><span>Timesheets</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-section">
+          <p class="nav-section-title">Payroll</p>
+          <ul class="nav-items">
+            <li class="has-children">
+              <button class="nav-item nav-parent" data-item="Payroll">
+                <i class="material-icons">payments</i>
+                <span>Payroll</span>
+                <i class="material-icons nav-arrow">expand_more</i>
+              </button>
+              <ul class="sub-nav">
+                <li><button class="nav-item nav-sub" data-item="Run Payroll"><i
+                      class="material-icons">play_circle_outline</i><span>Run Payroll</span></button></li>
+                <li><button class="nav-item nav-sub" data-item="Salary Slips"><i
+                      class="material-icons">receipt_long</i><span>Salary Slips</span></button></li>
+                <li><button class="nav-item nav-sub" data-item="Tax"><i
+                      class="material-icons">account_balance</i><span>Tax & Deductions</span></button></li>
+              </ul>
+            </li>
+            <li>
+              <button class="nav-item" data-item="Reports">
+                <i class="material-icons">description</i><span>Reports</span>
+              </button>
+            </li>
+            <li>
+              <button class="nav-item" data-item="Performance">
+                <i class="material-icons">emoji_events</i><span>Performance</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-section">
+          <p class="nav-section-title">Analytics</p>
+          <ul class="nav-items">
+            <li>
+              <button class="nav-item" data-item="Analytics">
+                <i class="material-icons">bar_chart</i><span>Analytics</span>
+              </button>
+            </li>
+            <li>
+              <button class="nav-item" data-item="Notifications">
+                <i class="material-icons">notifications</i><span>Notifications</span><span class="badge">3</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="sidebar-btn"><i class="material-icons">settings</i><span>Settings</span></button>
+        <button class="sidebar-btn"><i class="material-icons">help</i><span>Help & Support</span></button>
+      </div>
+    </aside>
+
+    <div class="main-wrapper">
+      <header class="topbar">
+        <div class="topbar-left">
+          <h1 class="topbar-title">Dashboard</h1>
+          <!-- <div class="topbar-heading">
+            <div class="topbar-logo-container">
+              <div class="logo-badge"><i class="material-icons">apartment</i></div>
+              <div class="logo-text">
+                <p class="logo-title">HRCore</p>
+                <p class="logo-subtitle">Management Suite</p>
+              </div>
+            </div>
+          </div> -->
+        </div>
+        <div class="topbar-right">
+          <div class="search-container">
+            <i class="material-icons">search</i>
+            <input type="text" placeholder="Search employees, reports...">
+          </div>
+          <div class="date-badge">
+            <i class="material-icons">calendar_today</i>
+            <span id="currentDate">April 23,2026</span>
+          </div>
+          <button class="icon-btn" aria-label="Toggle theme"><i class="material-icons">light_mode</i></button>
+          <div class="profile-container">
+            <button class="profile-btn" id="profileBtn" aria-label="Open profile menu">
+              <div class="avatar">A</div>
+              <div class="profile-info">
+                <p>Admin User</p><span>HR Manager</span>
+              </div>
+              <i class="material-icons">expand_more</i>
+            </button>
+            <div class="profile-dropdown" id="profileDropdown">
+              <div class="dropdown-header">
+                <p>Admin User</p><span>admin@hrcore.com</span>
+              </div>
+              <button>My Profile</button>
+              <button>Account Settings</button>
+              <button class="sign-out">Sign Out</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main class="dashboard page-view active" id="dashboardPage">
+        <!-- Header -->
+        <!-- <div class="dashboard-header">
+          <div>
+            <h1 class="dashboard-title">Good morning, Admin <span class="wave">👋</span></h1>
+            <p class="dashboard-subtitle">Here's what's happening in your organization today.</p>
+          </div>
+          <button class="report-btn">Generate Report</button>
+        </div> -->
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+
+          <!-- 1. Total Employees -->
+          <div class="stats-card c1">
+            <div class="icon-box green">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#3B6D11" stroke-width="1.8">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <!-- <span class="trend-badge up">↑ +12 this month</span> -->
+            <div class="card-body">
+              <p class="card-value">406</p>
+              <p class="card-label">Total Employees</p>
+              <p class="card-subtitle">Across 6 departments</p>
+            </div>
+          </div>
+
+          <!-- 2. Present Today -->
+          <div class="stats-card c2">
+            <div class="icon-box blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="1.8">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                <polyline points="22 4 12 14.01 9 11.01" />
+              </svg>
+            </div>
+            <div class="card-body">
+              <p class="card-value">364</p>
+              <p class="card-label">Present Today</p>
+              <p class="card-subtitle">89.7% attendance rate</p>
+            </div>
+          </div>
+
+          <!-- 3. Today's Absent -->
+          <div class="stats-card c3">
+            <div class="icon-box red">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#A32D2D" stroke-width="1.8">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="15" y1="9" x2="9" y2="15" />
+                <line x1="9" y1="9" x2="15" y2="15" />
+              </svg>
+            </div>
+            <div class="card-body">
+              <p class="card-value">28</p>
+              <p class="card-label">Today's Absent</p>
+              <p class="card-subtitle">Unplanned absences</p>
+            </div>
+          </div>
+
+          <!-- 4. On Leave (Approved) -->
+          <div class="stats-card c4">
+            <div class="icon-box amber">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#854F0B" stroke-width="1.8">
+                <rect x="3" y="4" width="18" height="18" rx="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+                <path d="M9 16l2 2 4-4" />
+              </svg>
+            </div>
+            <div class="card-body">
+              <p class="card-value">42</p>
+              <p class="card-label">On Leave (Approved)</p>
+              <p class="card-subtitle">12 pending approvals</p>
+            </div>
+          </div>
+
+          <!-- 5. Work From Home -->
+          <div class="stats-card c5">
+            <div class="icon-box pink">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#993556" stroke-width="1.8">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+            </div>
+            <div class="card-body">
+              <p class="card-value">56</p>
+              <p class="card-label">Work From Home</p>
+              <p class="card-subtitle">Remote working today</p>
+            </div>
+          </div>
+
+          <!-- 6. Weekly Off -->
+          <div class="stats-card c6">
+            <div class="icon-box purple">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="1.8">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+            </div>
+            <div class="card-body">
+              <p class="card-value">14</p>
+              <p class="card-label">Weekly Off</p>
+              <p class="card-subtitle">Eligible this week</p>
+            </div>
+          </div>
+
+          <!-- 7. In Notice Period -->
+          <div class="stats-card c7">
+            <div class="icon-box teal">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="1.8">
+                <path d="M18 8h1a4 4 0 0 1 0 8h-1" />
+                <path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z" />
+                <line x1="6" y1="1" x2="6" y2="4" />
+                <line x1="10" y1="1" x2="10" y2="4" />
+                <line x1="14" y1="1" x2="14" y2="4" />
+              </svg>
+            </div>
+            <div class="card-body">
+              <p class="card-value">9</p>
+              <p class="card-label">In Notice Period</p>
+              <p class="card-subtitle">Avg 45 days remaining</p>
+            </div>
+          </div>
+
+          <!-- 8. Probation Period -->
+          <div class="stats-card c8">
+            <div class="icon-box coral">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#993C1D" stroke-width="1.8">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="16" y1="17" x2="8" y2="17" />
+              </svg>
+            </div>
+            <div class="card-body">
+              <p class="card-value">23</p>
+              <p class="card-label">Probation Period</p>
+              <p class="card-subtitle">Review due this month</p>
+            </div>
+          </div>
+
+          <!-- 9. Expired Probation -->
+          <div class="stats-card c9">
+            <div class="icon-box red">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#A32D2D" stroke-width="1.8">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" y1="8" x2="12" y2="12" />
+                <line x1="12" y1="16" x2="12.01" y2="16" />
+              </svg>
+            </div>
+            <div class="card-body">
+              <p class="card-value">6</p>
+              <p class="card-label">Expired Probation</p>
+              <p class="card-subtitle">Awaiting confirmation</p>
+            </div>
+          </div>
+
+          <!-- 10. Pending Docs -->
+          <div class="stats-card c10">
+            <div class="icon-box amber">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#854F0B" stroke-width="1.8">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                <polyline points="14 2 14 8 20 8" />
+                <line x1="16" y1="13" x2="8" y2="13" />
+                <line x1="13" y1="17" x2="8" y2="17" />
+              </svg>
+            </div>
+            <div class="card-body">
+              <p class="card-value">31</p>
+              <p class="card-label">Pending Docs</p>
+              <p class="card-subtitle">Overdue: 8 employees</p>
+            </div>
+          </div>
+
+          <!-- 11. App Download Status -->
+          <div class="stats-card c11">
+            <div class="icon-box blue">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#185FA5" stroke-width="1.8">
+                <rect x="5" y="2" width="14" height="20" rx="2" />
+                <line x1="12" y1="18" x2="12.01" y2="18" stroke-linecap="round" stroke-width="2.5" />
+                <path d="M9 10l3 3 3-3" />
+                <line x1="12" y1="7" x2="12" y2="13" />
+              </svg>
+            </div>
+            <div class="card-body">
+              <p class="card-value">290</p>
+              <p class="card-label">App Downloaded</p>
+              <p class="card-subtitle">116 yet to install</p>
+            </div>
+          </div>
+
+          <!-- 12. EPF Nominees -->
+          <div class="stats-card c12">
+            <div class="icon-box coral">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#993C1D" stroke-width="1.8">
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+              </svg>
+            </div>
+            <div class="card-body">
+              <p class="card-value">236</p>
+              <p class="card-label">EPF Nominees</p>
+              <p class="card-subtitle">170 declarations pending</p>
+            </div>
+          </div>
+
+          <!-- 13. Monthly Payroll -->
+          <div class="stats-card c13">
+            <div class="icon-box purple">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#534AB7" stroke-width="1.8">
+                <line x1="12" y1="1" x2="12" y2="23" />
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+              </svg>
+            </div>
+            <div class="card-body">
+              <p class="card-value">$284K</p>
+              <p class="card-label">Monthly Payroll</p>
+              <p class="card-subtitle">vs last month</p>
+            </div>
+          </div>
+
+          <!-- 14. Avg Performance -->
+          <div class="stats-card c14">
+            <div class="icon-box pink">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#993556" stroke-width="1.8">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+              </svg>
+            </div>
+            <div class="card-body">
+              <p class="card-value">87.4%</p>
+              <p class="card-label">Avg Performance</p>
+              <p class="card-subtitle">Q1 2026 review</p>
+            </div>
+          </div>
+
+          <!-- 15. Avg Work Hours -->
+          <div class="stats-card c15">
+            <div class="icon-box teal">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#0F6E56" stroke-width="1.8">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+            </div>
+            <div class="card-body">
+              <p class="card-value">7.8h</p>
+              <p class="card-label">Avg Work Hours</p>
+              <p class="card-subtitle">Per day this week</p>
+            </div>
+          </div>
+
+          <!-- 16. EPF Declaration Changes -->
+          <div class="stats-card c16">
+            <div class="icon-box gray">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#5F5E5A" stroke-width="1.8">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+              </svg>
+            </div>
+            <div class="card-body">
+              <p class="card-value">47</p>
+              <p class="card-label">EPF Decl. Changes</p>
+              <p class="card-subtitle">Nominee updates filed</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts and Content Row 1 -->
+        <div class="content-grid-2-1">
+          <!-- Attendance Chart -->
+          <div class="card attendance-card">
+            <div class="card-title">
+              <div class="card-heading">
+                <h3>Weekly Attendance</h3>
+                <p>This week overview</p>
+              </div>
+              <div class="legend">
+                <div class="legend-item">
+                  <span class="legend-color orange"></span>
+                  <span>Present</span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-color light-orange"></span>
+                  <span>Absent</span>
+                </div>
+              </div>
+            </div>
+            <div class="chart-container">
+              <div class="bar-chart">
+                <div class="bar-group">
+                  <div class="bar-wrapper">
+                    <div class="bar-stack">
+                      <div class="bar-segment absent" style="height: 8%"></div>
+                      <div class="bar-segment present" style="height: 92%"></div>
+                    </div>
+                    <span class="bar-label">Mon</span>
+                  </div>
+                </div>
+                <div class="bar-group">
+                  <div class="bar-wrapper">
+                    <div class="bar-stack">
+                      <div class="bar-segment absent" style="height: 12%"></div>
+                      <div class="bar-segment present" style="height: 88%"></div>
+                    </div>
+                    <span class="bar-label">Tue</span>
+                  </div>
+                </div>
+                <div class="bar-group">
+                  <div class="bar-wrapper">
+                    <div class="bar-stack">
+                      <div class="bar-segment absent" style="height: 5%"></div>
+                      <div class="bar-segment present" style="height: 95%"></div>
+                    </div>
+                    <span class="bar-label">Wed</span>
+                  </div>
+                </div>
+                <div class="bar-group">
+                  <div class="bar-wrapper">
+                    <div class="bar-stack">
+                      <div class="bar-segment absent" style="height: 9%"></div>
+                      <div class="bar-segment present" style="height: 91%"></div>
+                    </div>
+                    <span class="bar-label">Thu</span>
+                  </div>
+                </div>
+                <div class="bar-group">
+                  <div class="bar-wrapper">
+                    <div class="bar-stack">
+                      <div class="bar-segment absent" style="height: 13%"></div>
+                      <div class="bar-segment present" style="height: 87%"></div>
+                    </div>
+                    <span class="bar-label">Fri</span>
+                  </div>
+                </div>
+                <div class="bar-group">
+                  <div class="bar-wrapper">
+                    <div class="bar-stack">
+                      <div class="bar-segment absent" style="height: 15%"></div>
+                      <div class="bar-segment present" style="height: 45%"></div>
+                    </div>
+                    <span class="bar-label">Sat</span>
+                  </div>
+                </div>
+                <div class="bar-group">
+                  <div class="bar-wrapper">
+                    <div class="bar-stack">
+                      <div class="bar-segment absent" style="height: 10%"></div>
+                      <div class="bar-segment present" style="height: 30%"></div>
+                    </div>
+                    <span class="bar-label">Sun</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chart-stats">
+              <div class="stat">
+                <p class="stat-value">89.7%</p>
+                <p class="stat-label">Avg. Attendance</p>
+              </div>
+              <div class="stat">
+                <p class="stat-value positive">+2.3%</p>
+                <p class="stat-label">vs last week</p>
+              </div>
+              <div class="stat">
+                <p class="stat-value">42</p>
+                <p class="stat-label">On Leave Today</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Actions -->
+          <div class="card quick-actions">
+            <h3>Quick Actions</h3>
+            <p>Common tasks & shortcuts</p>
+            <div class="actions-grid">
+              <button class="action-btn orange">
+                <i class="material-icons">person_add</i>
+                <span>Add Employee</span>
+              </button>
+              <button class="action-btn blue">
+                <i class="material-icons">description</i>
+                <span>New Report</span>
+              </button>
+              <button class="action-btn green">
+                <i class="material-icons">attach_money</i>
+                <span>Run Payroll</span>
+              </button>
+              <button class="action-btn pink">
+                <i class="material-icons">calendar_today</i>
+                <span>Schedule</span>
+              </button>
+              <button class="action-btn teal">
+                <i class="material-icons">access_time</i>
+                <span>Timesheet</span>
+              </button>
+              <button class="action-btn amber">
+                <i class="material-icons">emoji_events</i>
+                <span>Performance</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Employees -->
+        <div>
+          <div class="card">
+            <div class="card-title">
+              <div>
+                <h3>Recent Joiners</h3>
+                <p>Latest employee additions</p>
+              </div>
+              <button class="view-all-btn">
+                <i class="material-icons">person_add</i>
+                View All
+              </button>
+            </div>
+            <div class="employees-table">
+              <div class="employee-row header">
+                <div>Employee</div>
+                <div>Department</div>
+                <div>Status</div>
+                <div>Joined</div>
+                <div></div>
+              </div>
+              <div class="employee-row">
+                <div class="employee-info">
+                  <div class="avatar orange">SJ</div>
+                  <div>
+                    <p class="emp-name">Kunal</p>
+                    <p class="emp-role">UI/UX Designer</p>
+                  </div>
+                </div>
+                <div><span class="dept-label">Design</span></div>
+                <div><span class="status-badge active">Active</span></div>
+                <div><span class="joined-date">Apr 10</span></div>
+              </div>
+              <div class="employee-row">
+                <div class="employee-info">
+                  <div class="avatar blue">MC</div>
+                  <div>
+                    <p class="emp-name">Krishna Gupta</p>
+                    <p class="emp-role">Backend Developer</p>
+                  </div>
+                </div>
+                <div><span class="dept-label">Engineering</span></div>
+                <div><span class="status-badge active">Active</span></div>
+                <div><span class="joined-date">Apr 8</span></div>
+              </div>
+              <div class="employee-row">
+                <div class="employee-info">
+                  <div class="avatar green">ER</div>
+                  <div>
+                    <p class="emp-name">Harsh</p>
+                    <p class="emp-role">Marketing Lead</p>
+                  </div>
+                </div>
+                <div><span class="dept-label">Marketing</span></div>
+                <div><span class="status-badge leave">On Leave</span></div>
+                <div><span class="joined-date">Apr 5</span></div>
+              </div>
+              <div class="employee-row">
+                <div class="employee-info">
+                  <div class="avatar pink">DK</div>
+                  <div>
+                    <p class="emp-name">Lucky</p>
+                    <p class="emp-role">Product Manager</p>
+                  </div>
+                </div>
+                <div><span class="dept-label">Product</span></div>
+                <div><span class="status-badge active">Active</span></div>
+                <div><span class="joined-date">Apr 3</span></div>
+              </div>
+              <div class="employee-row">
+                <div class="employee-info">
+                  <div class="avatar teal">PP</div>
+                  <div>
+                    <p class="emp-name">Priya Patel</p>
+                    <p class="emp-role">Data Analyst</p>
+                  </div>
+                </div>
+                <div><span class="dept-label">Analytics</span></div>
+                <div><span class="status-badge active">Active</span></div>
+                <div><span class="joined-date">Apr 1</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Bottom Grid -->
+        <div class="content-grid-2">
+          <!-- Department Breakdown -->
+          <div class="card department-breakdown">
+            <div>
+              <h3>Department Breakdown</h3>
+              <p>406 total employees</p>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-segment orange" style="--value: 35%"></div>
+              <div class="progress-segment blue" style="--value: 17%"></div>
+              <div class="progress-segment pink" style="--value: 11%"></div>
+              <div class="progress-segment green" style="--value: 22%"></div>
+              <div class="progress-segment amber" style="--value: 9%"></div>
+              <div class="progress-segment teal" style="--value: 6%"></div>
+            </div>
+            <div class="dept-chart-layout">
+              <div class="dept-donut" aria-label="Department employee distribution">
+                <div class="dept-donut-center">
+                  <span>406</span>
+                  <small>Employees</small>
+                </div>
+              </div>
+              <div class="dept-list">
+                <div class="dept-item" style="--value: 35%">
+                  <span class="dept-color orange"></span>
+                  <span class="dept-name">Engineering</span>
+                  <span class="dept-count">142</span>
+                  <div class="dept-progress">
+                    <div></div>
+                  </div>
+                  <span class="dept-percent">35%</span>
+                </div>
+                <div class="dept-item" style="--value: 17%">
+                  <span class="dept-color blue"></span>
+                  <span class="dept-name">Marketing</span>
+                  <span class="dept-count">68</span>
+                  <div class="dept-progress">
+                    <div></div>
+                  </div>
+                  <span class="dept-percent">17%</span>
+                </div>
+                <div class="dept-item" style="--value: 11%">
+                  <span class="dept-color pink"></span>
+                  <span class="dept-name">Design</span>
+                  <span class="dept-count">45</span>
+                  <div class="dept-progress">
+                    <div></div>
+                  </div>
+                  <span class="dept-percent">11%</span>
+                </div>
+                <div class="dept-item" style="--value: 22%">
+                  <span class="dept-color green"></span>
+                  <span class="dept-name">Sales</span>
+                  <span class="dept-count">89</span>
+                  <div class="dept-progress">
+                    <div></div>
+                  </div>
+                  <span class="dept-percent">22%</span>
+                </div>
+                <div class="dept-item" style="--value: 9%">
+                  <span class="dept-color amber"></span>
+                  <span class="dept-name">Finance</span>
+                  <span class="dept-count">38</span>
+                  <div class="dept-progress">
+                    <div></div>
+                  </div>
+                  <span class="dept-percent">9%</span>
+                </div>
+                <div class="dept-item" style="--value: 6%">
+                  <span class="dept-color teal"></span>
+                  <span class="dept-name">HR</span>
+                  <span class="dept-count">24</span>
+                  <div class="dept-progress">
+                    <div></div>
+                  </div>
+                  <span class="dept-percent">6%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Upcoming Events -->
+          <div class="card upcoming-events">
+            <div class="card-title">
+              <div>
+                <h3>Upcoming Events</h3>
+                <p>Next 2 weeks</p>
+              </div>
+              <button class="view-all-btn">
+                View Calendar
+                <i class="material-icons">arrow_forward</i>
+              </button>
+            </div>
+            <div class="events-list">
+              <div class="event-item orange-event">
+                <div class="event-dot"></div>
+                <div class="event-content">
+                  <p>Q2 Performance Reviews</p>
+                  <div class="event-meta">
+                    <span><i class="material-icons">calendar_today</i> Apr 20, 2026</span>
+                    <span><i class="material-icons">access_time</i> 10:00 AM</span>
+                    <span><i class="material-icons">group</i> 28</span>
+                  </div>
+                </div>
+              </div>
+              <div class="event-item blue-event">
+                <div class="event-dot"></div>
+                <div class="event-content">
+                  <p>New Hire Orientation</p>
+                  <div class="event-meta">
+                    <span><i class="material-icons">calendar_today</i> Apr 22, 2026</span>
+                    <span><i class="material-icons">access_time</i> 9:00 AM</span>
+                    <span><i class="material-icons">group</i> 6</span>
+                  </div>
+                </div>
+              </div>
+              <div class="event-item green-event">
+                <div class="event-dot"></div>
+                <div class="event-content">
+                  <p>Monthly All-Hands Meeting</p>
+                  <div class="event-meta">
+                    <span><i class="material-icons">calendar_today</i> Apr 25, 2026</span>
+                    <span><i class="material-icons">access_time</i> 2:00 PM</span>
+                    <span><i class="material-icons">group</i> 406</span>
+                  </div>
+                </div>
+              </div>
+              <div class="event-item amber-event">
+                <div class="event-dot"></div>
+                <div class="event-content">
+                  <p>Leadership Training</p>
+                  <div class="event-meta">
+                    <span><i class="material-icons">calendar_today</i> Apr 28, 2026</span>
+                    <span><i class="material-icons">access_time</i> 11:00 AM</span>
+                    <span><i class="material-icons">group</i> 15</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+
+</html>

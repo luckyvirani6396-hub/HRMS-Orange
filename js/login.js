@@ -56,7 +56,7 @@ if (loginForm) {
             if (lockStatus) lockStatus.textContent = 'Unlocked';
 
             unlockPreviewTimer = window.setTimeout(() => {
-                window.location.href = 'index.html';
+                window.location.href = 'dashboard.html';
             }, 900);
         }, 650);
 
