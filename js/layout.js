@@ -10,6 +10,35 @@ if (toggleBtn && sidebar && icon) {
   });
 }
 
+// ── Mobile sidebar open/close ──
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+function openMobileSidebar() {
+  if (sidebar) sidebar.classList.add('mobile-open');
+  if (sidebarOverlay) sidebarOverlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMobileSidebar() {
+  if (sidebar) sidebar.classList.remove('mobile-open');
+  if (sidebarOverlay) sidebarOverlay.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+if (mobileMenuBtn) {
+  mobileMenuBtn.addEventListener('click', openMobileSidebar);
+}
+
+if (sidebarOverlay) {
+  sidebarOverlay.addEventListener('click', closeMobileSidebar);
+}
+
+// Close mobile sidebar on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeMobileSidebar();
+});
+
 // Dropdown sub-nav toggle - Custom implementation
 document.querySelectorAll('.nav-parent').forEach(btn => {
   btn.addEventListener('click', (e) => {

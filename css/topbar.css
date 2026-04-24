@@ -106,11 +106,7 @@
   font-size: 14px;
 }
 
-@media (max-width: 768px) {
-  .date-badge {
-    display: none;
-  }
-}
+/* date-badge visibility handled in responsive.css */
 
 .topbar-right {
   display: flex;

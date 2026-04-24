@@ -17,6 +17,41 @@
   background: var(--gray-400);
 }
 
+/* ========== SIDEBAR OVERLAY (mobile) ========== */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 998;
+}
+
+.sidebar-overlay.active {
+  display: block;
+}
+
+/* ========== MOBILE HAMBURGER BUTTON ========== */
+.mobile-menu-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background-color: var(--orange-50);
+  border: 1px solid var(--orange-100);
+  color: var(--orange-600);
+  font-size: 20px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.mobile-menu-btn:hover {
+  background-color: var(--orange-100);
+  color: var(--orange-700);
+}
+
 /* ========== RESPONSIVE ========== */
 @media (max-width: 1024px) {
   .topbar-left {
@@ -33,59 +68,117 @@
 }
 
 @media (max-width: 768px) {
+  /* App container stays as row — sidebar is an overlay */
   .app-container {
-    flex-direction: column;
+    flex-direction: row;
   }
 
+  /* ── Sidebar: fixed off-screen drawer ── */
   .sidebar {
-    width: 100%;
-    height: auto;
-    border-right: none;
-    border-bottom: 1px solid var(--orange-100);
-    flex-direction: row;
-    max-height: 60px;
+    position: fixed !important;
+    top: 0;
+    left: -260px;
+    width: 256px !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+    flex-direction: column !important;
+    border-right: 1px solid var(--orange-100) !important;
+    border-bottom: none !important;
+    z-index: 999;
+    transition: left 0.3s ease;
+    overflow: hidden;
+  }
+
+  .sidebar.mobile-open {
+    left: 0;
   }
 
   .sidebar-header {
-    flex: 1;
+    flex: initial;
   }
 
+  /* Restore sidebar nav and footer that were hidden */
   .sidebar-nav {
-    display: none;
+    display: flex;
+    overflow-y: auto;
   }
 
   .sidebar-footer {
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+  }
+
+  /* Hide desktop collapse toggle on mobile */
+  .toggle-btn {
     display: none;
   }
 
+  /* Show hamburger on mobile */
+  .mobile-menu-btn {
+    display: flex;
+  }
+
+  /* Main wrapper fills full viewport width */
   .main-wrapper {
     flex: 1;
-  }
-
-  .page-view {
-    padding: 16px;
-    gap: 16px;
-  }
-
-  .topbar {
-    height: auto;
-    flex-direction: column;
-    gap: 12px;
-    padding: 12px 16px;
-  }
-
-  .topbar-left {
     width: 100%;
+    min-width: 0;
+  }
+
+  /* ── Topbar: single row on mobile ── */
+  .topbar {
+    height: 60px;
+    flex-direction: row;
+    padding: 0 12px;
     gap: 8px;
   }
 
-  .topbar-right {
-    width: 100%;
-    justify-content: space-between;
+  .topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 0 0 auto;
+    width: auto;
   }
 
+  .topbar-title {
+    font-size: 18px;
+  }
+
+  .topbar-right {
+    flex: 1;
+    width: auto;
+    justify-content: flex-end;
+    gap: 6px;
+  }
+
+  /* Hide search on mobile topbar */
   .search-container {
-    max-width: 100%;
+    display: none;
+  }
+
+  /* Hide profile name/role text, keep avatar */
+  .profile-info {
+    display: none;
+  }
+
+  .profile-btn i.material-icons:last-child {
+    display: none;
+  }
+
+  /* ── Date badge: show on mobile ── */
+  .date-badge {
+    display: flex !important;
+    font-size: 11px;
+    padding: 6px 8px;
+    gap: 4px;
+  }
+
+  /* ── Content ── */
+  .page-view {
+    padding: 16px;
+    gap: 16px;
   }
 
   .stats-grid {
@@ -134,5 +227,9 @@
 
   .bar-chart {
     height: 120px;
+  }
+
+  .date-badge span {
+    display: none;
   }
 }
