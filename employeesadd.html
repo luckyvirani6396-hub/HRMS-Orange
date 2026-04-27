@@ -1,0 +1,859 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HRCore - Add Employee</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/sidebar.css">
+  <link rel="stylesheet" href="css/topbar.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/employees.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-container">
+          <img src="./assets/images/Synergy-logo.png" alt="Synergy HRMS" class="logo-full">
+          <img src="./assets/images/synergyIcon (2).png" alt="Synergy" class="logo-icon" />
+        </div>
+        <button class="toggle-btn" id="toggleSidebar" aria-label="Collapse sidebar">
+          <i class="material-icons" id="toggleIcon">chevron_left</i>
+        </button>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section">
+          <p class="nav-section-title">Main</p>
+          <ul class="nav-items">
+            <li>
+              <button class="nav-item" data-item="Dashboard" data-url="dashboard.html">
+                <i class="material-icons">dashboard</i>
+                <span>Dashboard</span>
+              </button>
+            </li>
+            <li>
+              <button class="nav-item active" data-item="Employees" data-url="employees.html">
+                <i class="material-icons">groups</i>
+                <span>Employees</span>
+              </button>
+            </li>
+            <li class="has-children">
+              <button class="nav-item nav-parent" data-item="Master">
+                <i class="material-icons">tune</i>
+                <span>Master</span>
+                <i class="material-icons nav-arrow">expand_more</i>
+              </button>
+              <ul class="sub-nav">
+                <li><button class="nav-item nav-sub" data-item="Designation" data-url="Designation.html"><i
+                      class="material-icons">badge</i><span>Designation</span></button></li>
+                <li><button class="nav-item nav-sub" data-item="Location"><i
+                      class="material-icons">location_on</i><span>Location</span></button></li>
+                <li><button class="nav-item nav-sub" data-item="Grade"><i
+                      class="material-icons">workspace_premium</i><span>Grade</span></button></li>
+                <li><button class="nav-item nav-sub" data-item="Shift"><i
+                      class="material-icons">schedule</i><span>Shift</span></button></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-section">
+          <p class="nav-section-title">Workforce</p>
+          <ul class="nav-items">
+            <li>
+              <button class="nav-item" data-item="Attendance">
+                <i class="material-icons">fact_check</i><span>Attendance</span>
+              </button>
+            </li>
+            <li class="has-children">
+              <button class="nav-item nav-parent" data-item="Leave">
+                <i class="material-icons">event</i>
+                <span>Leave Management</span>
+                <i class="material-icons nav-arrow">expand_more</i>
+              </button>
+              <ul class="sub-nav">
+                <li><button class="nav-item nav-sub" data-item="Leave Apply"><i
+                      class="material-icons">add_circle_outline</i><span>Apply Leave</span></button></li>
+                <li><button class="nav-item nav-sub" data-item="Leave Balance"><i
+                      class="material-icons">account_balance_wallet</i><span>Leave Balance</span></button></li>
+                <li><button class="nav-item nav-sub" data-item="Leave Approval"><i
+                      class="material-icons">task_alt</i><span>Approval</span><span class="badge">5</span></button></li>
+              </ul>
+            </li>
+            <li>
+              <button class="nav-item" data-item="Timesheets">
+                <i class="material-icons">schedule</i><span>Timesheets</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-section">
+          <p class="nav-section-title">Payroll</p>
+          <ul class="nav-items">
+            <li class="has-children">
+              <button class="nav-item nav-parent" data-item="Payroll">
+                <i class="material-icons">payments</i>
+                <span>Payroll</span>
+                <i class="material-icons nav-arrow">expand_more</i>
+              </button>
+              <ul class="sub-nav">
+                <li><button class="nav-item nav-sub" data-item="Run Payroll"><i
+                      class="material-icons">play_circle_outline</i><span>Run Payroll</span></button></li>
+                <li><button class="nav-item nav-sub" data-item="Salary Slips"><i
+                      class="material-icons">receipt_long</i><span>Salary Slips</span></button></li>
+                <li><button class="nav-item nav-sub" data-item="Tax"><i
+                      class="material-icons">account_balance</i><span>Tax &amp; Deductions</span></button></li>
+              </ul>
+            </li>
+            <li>
+              <button class="nav-item" data-item="Reports">
+                <i class="material-icons">description</i><span>Reports</span>
+              </button>
+            </li>
+            <li>
+              <button class="nav-item" data-item="Performance">
+                <i class="material-icons">emoji_events</i><span>Performance</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nav-section">
+          <p class="nav-section-title">Analytics</p>
+          <ul class="nav-items">
+            <li>
+              <button class="nav-item" data-item="Analytics">
+                <i class="material-icons">bar_chart</i><span>Analytics</span>
+              </button>
+            </li>
+            <li>
+              <button class="nav-item" data-item="Notifications">
+                <i class="material-icons">notifications</i><span>Notifications</span><span class="badge">3</span>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="sidebar-btn"><i class="material-icons">settings</i><span>Settings</span></button>
+        <button class="sidebar-btn"><i class="material-icons">help</i><span>Help &amp; Support</span></button>
+      </div>
+    </aside>
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- MAIN WRAPPER -->
+    <div class="main-wrapper">
+
+      <!-- TOPBAR -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open sidebar">
+            <i class="material-icons">menu</i>
+          </button>
+          <h1 class="topbar-title">Add Employee</h1>
+        </div>
+        <div class="topbar-right">
+          <div class="search-container">
+            <i class="material-icons">search</i>
+            <input type="text" placeholder="Search employees, reports...">
+          </div>
+          <div class="date-badge">
+            <i class="material-icons">calendar_today</i>
+            <span id="currentDate"></span>
+          </div>
+          <button class="icon-btn" aria-label="Toggle theme"><i class="material-icons">light_mode</i></button>
+          <div class="profile-container">
+            <button class="profile-btn" id="profileBtn" aria-label="Open profile menu">
+              <div class="avatar">A</div>
+              <div class="profile-info">
+                <p>Admin User</p><span>HR Manager</span>
+              </div>
+              <i class="material-icons">expand_more</i>
+            </button>
+            <div class="profile-dropdown" id="profileDropdown">
+              <div class="dropdown-header">
+                <p>Admin User</p><span>admin@hrcore.com</span>
+              </div>
+              <button>My Profile</button>
+              <button>Account Settings</button>
+              <button class="sign-out">Sign Out</button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ADD EMPLOYEE MAIN AREA -->
+      <div class="add-emp-main">
+
+        <!-- Form Shell -->
+        <div class="form-shell">
+
+          <!-- Left Panel: Step Wizard -->
+          <aside class="left-panel">
+
+            <div class="step-nav">
+              <div class="step-item active" data-step="0">
+                <div class="step-dot"><i class="material-icons">person</i></div>
+                <div class="step-meta">
+                  <p class="step-title">Personal Info</p>
+                  <p class="step-desc">Name, DOB, Gender</p>
+                </div>
+              </div>
+              <div class="step-connector"></div>
+              <div class="step-item" data-step="1">
+                <div class="step-dot"><i class="material-icons">work</i></div>
+                <div class="step-meta">
+                  <p class="step-title">Job Details</p>
+                  <p class="step-desc">Role, Department, Location</p>
+                </div>
+              </div>
+              <div class="step-connector"></div>
+              <div class="step-item" data-step="2">
+                <div class="step-dot"><i class="material-icons">badge</i></div>
+                <div class="step-meta">
+                  <p class="step-title">Identity &amp; Docs</p>
+                  <p class="step-desc">PAN, Aadhar, Passport</p>
+                </div>
+              </div>
+              <div class="step-connector"></div>
+              <div class="step-item" data-step="3">
+                <div class="step-dot"><i class="material-icons">account_balance</i></div>
+                <div class="step-meta">
+                  <p class="step-title">Bank &amp; Payroll</p>
+                  <p class="step-desc">Account, PF, ESI</p>
+                </div>
+              </div>
+              <div class="step-connector"></div>
+              <div class="step-item" data-step="4">
+                <div class="step-dot"><i class="material-icons">schedule</i></div>
+                <div class="step-meta">
+                  <p class="step-title">Work Schedule</p>
+                  <p class="step-desc">Shift, Weekly Off</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel-footer">
+              <div class="emp-code-box">
+                <span class="code-label">Employee Code</span>
+                <span class="code-value" id="empCodeDisplay">ST2431</span>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Right Panel: Form -->
+          <main class="right-panel">
+            <!-- <div class="form-header">
+              <div>
+                <h1 class="form-title" id="stepTitle">Personal Information</h1>
+                <p class="form-subtitle" id="stepSubtitle">Enter the employee basic personal details below</p>
+              </div>
+              <button class="close-btn" onclick="window.location.href='employees.html'" aria-label="Back to Employees">
+                <i class="material-icons">close</i>
+              </button>
+            </div> -->
+
+            <div class="steps-wrapper">
+
+              <!-- STEP 0: Personal Info -->
+              <section class="step-section active" id="step-0">
+                <div class="form-grid">
+                  <div class="field-group col-half">
+                    <label class="field-label" for="empCode">Employee Code <span class="req">*</span></label>
+                    <div class="input-wrap">
+                      <i class="material-icons input-icon">tag</i>
+                      <input id="empCode" type="text" class="field-input" value="ST2431" placeholder="Employee Code">
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="firstName">First Name <span class="req">*</span></label>
+                    <div class="input-wrap">
+                      <i class="material-icons input-icon">person</i>
+                      <input id="firstName" type="text" class="field-input" placeholder="First Name">
+                    </div>
+                  </div>
+                  <div class="field-group col-third">
+                    <label class="field-label" for="middleName">Middle Name</label>
+                    <div class="input-wrap">
+                      <i class="material-icons input-icon">person_outline</i>
+                      <input id="middleName" type="text" class="field-input" placeholder="Middle Name">
+                    </div>
+                  </div>
+                  <div class="field-group col-third">
+                    <label class="field-label" for="lastName">Last Name <span class="req">*</span></label>
+                    <div class="input-wrap">
+                      <i class="material-icons input-icon">person_outline</i>
+                      <input id="lastName" type="text" class="field-input" placeholder="Last Name">
+                    </div>
+                  </div>
+                  <div class="field-group col-third">
+                    <label class="field-label" for="contact">Contact No <span class="req">*</span></label>
+                    <div class="input-wrap">
+                      <i class="material-icons input-icon">phone</i>
+                      <input id="contact" type="tel" class="field-input" placeholder="Contact No">
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="dob">Date of Birth <span class="req">*</span></label>
+                    <div class="input-wrap">
+                      <i class="material-icons input-icon">cake</i>
+                      <input id="dob" type="date" class="field-input">
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="doj">Date of Joining <span class="req">*</span></label>
+                    <div class="input-wrap">
+                      <i class="material-icons input-icon">event_available</i>
+                      <input id="doj" type="date" class="field-input">
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="fatherName">Father Name</label>
+                    <div class="input-wrap">
+                      <i class="material-icons input-icon">family_restroom</i>
+                      <input id="fatherName" type="text" class="field-input" placeholder="Father Name">
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="motherName">Mother Name</label>
+                    <div class="input-wrap">
+                      <i class="material-icons input-icon">family_restroom</i>
+                      <input id="motherName" type="text" class="field-input" placeholder="Mother Name">
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="gender">Gender <span class="req">*</span></label>
+                    <div class="input-wrap select-wrap">
+                      <i class="material-icons input-icon">wc</i>
+                      <select id="gender" class="field-input field-select">
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="other">Other</option>
+                      </select>
+                      <i class="material-icons select-arrow">expand_more</i>
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="empType">Employee Type <span class="req">*</span></label>
+                    <div class="input-wrap select-wrap">
+                      <i class="material-icons input-icon">category</i>
+                      <select id="empType" class="field-input field-select">
+                        <option value="">Select Employee Type</option>
+                        <option value="full-time">Full Time</option>
+                        <option value="part-time">Part Time</option>
+                        <option value="contract">Contract</option>
+                        <option value="intern">Intern</option>
+                      </select>
+                      <i class="material-icons select-arrow">expand_more</i>
+                    </div>
+                  </div>
+                  <div class="field-group col-full">
+                    <label class="field-label" for="permAddress">Permanent Address</label>
+                    <div class="input-wrap textarea-wrap">
+                      <i class="material-icons input-icon">home</i>
+                      <textarea id="permAddress" class="field-input field-textarea"
+                        placeholder="Please Enter Your Permanent Address" rows="3"></textarea>
+                    </div>
+                  </div>
+                  <div class="field-group col-full">
+                    <label class="field-label" for="presAddress">Present Address</label>
+                    <div class="input-wrap textarea-wrap">
+                      <i class="material-icons input-icon">location_on</i>
+                      <textarea id="presAddress" class="field-input field-textarea"
+                        placeholder="Please Enter Your Present Address" rows="3"></textarea>
+                    </div>
+                    <div class="same-address-row">
+                      <label class="checkbox-label">
+                        <input type="checkbox" id="sameAddress" class="checkbox-input">
+                        <span class="checkbox-custom"></span>
+                        Same as Permanent Address
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- STEP 1: Job Details -->
+              <section class="step-section" id="step-1">
+                <div class="form-grid">
+                  <div class="field-group col-half">
+                    <label class="field-label" for="designation">Designation <span class="req">*</span></label>
+                    <div class="input-wrap select-wrap">
+                      <i class="material-icons input-icon">badge</i>
+                      <select id="designation" class="field-input field-select">
+                        <option value="">--Select Designation--</option>
+                        <option>Account Executive</option>
+                        <option>Assistant Manager - IT</option>
+                        <option>Assistant Manager - Operations</option>
+                        <option>Senior Developer</option>
+                        <option>HR Manager</option>
+                      </select>
+                      <i class="material-icons select-arrow">expand_more</i>
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="department">Department <span class="req">*</span></label>
+                    <div class="input-wrap select-wrap">
+                      <i class="material-icons input-icon">apartment</i>
+                      <select id="department" class="field-input field-select">
+                        <option value="">--Select Department--</option>
+                        <option>Human Resources</option>
+                        <option>Information Technology</option>
+                        <option>Finance</option>
+                        <option>Operations</option>
+                        <option>Sales</option>
+                      </select>
+                      <i class="material-icons select-arrow">expand_more</i>
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="location">Location <span class="req">*</span></label>
+                    <div class="input-wrap select-wrap">
+                      <i class="material-icons input-icon">location_city</i>
+                      <select id="location" class="field-input field-select">
+                        <option value="">--Select Location--</option>
+                        <option>Mumbai</option>
+                        <option>Delhi</option>
+                        <option>Bangalore</option>
+                        <option>Hyderabad</option>
+                        <option>Pune</option>
+                      </select>
+                      <i class="material-icons select-arrow">expand_more</i>
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="reportingTo">Reporting To</label>
+                    <div class="input-wrap select-wrap">
+                      <i class="material-icons input-icon">supervisor_account</i>
+                      <select id="reportingTo" class="field-input field-select">
+                        <option value="">--Select Manager--</option>
+                        <option>Rahul Sharma</option>
+                        <option>Priya Mehta</option>
+                        <option>Amit Patel</option>
+                      </select>
+                      <i class="material-icons select-arrow">expand_more</i>
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="emailId">Official Email ID <span class="req">*</span></label>
+                    <div class="input-wrap">
+                      <i class="material-icons input-icon">email</i>
+                      <input id="emailId" type="email" class="field-input" placeholder="Official Email ID">
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="personalEmail">Personal Email ID</label>
+                    <div class="input-wrap">
+                      <i class="material-icons input-icon">alternate_email</i>
+                      <input id="personalEmail" type="email" class="field-input" placeholder="Personal Email ID">
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="status">Status <span class="req">*</span></label>
+                    <div class="input-wrap select-wrap">
+                      <i class="material-icons input-icon">toggle_on</i>
+                      <select id="status" class="field-input field-select">
+                        <option value="active">Active</option>
+                        <option value="inactive">Inactive</option>
+                        <option value="probation">Probation</option>
+                      </select>
+                      <i class="material-icons select-arrow">expand_more</i>
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="projectName">Project Name</label>
+                    <div class="input-wrap select-wrap">
+                      <i class="material-icons input-icon">folder</i>
+                      <select id="projectName" class="field-input field-select">
+                        <option value="">--Select Project--</option>
+                        <option>Project Alpha</option>
+                        <option>Project Beta</option>
+                        <option>Project Gamma</option>
+                      </select>
+                      <i class="material-icons select-arrow">expand_more</i>
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="costCenter">Cost Center</label>
+                    <div class="input-wrap select-wrap">
+                      <i class="material-icons input-icon">price_change</i>
+                      <select id="costCenter" class="field-input field-select">
+                        <option value="">--Select Cost Center--</option>
+                        <option>CC-001 Corporate</option>
+                        <option>CC-002 Operations</option>
+                        <option>CC-003 IT</option>
+                      </select>
+                      <i class="material-icons select-arrow">expand_more</i>
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="grade">Grade</label>
+                    <div class="input-wrap select-wrap">
+                      <i class="material-icons input-icon">workspace_premium</i>
+                      <select id="grade" class="field-input field-select">
+                        <option value="">--Select Grade--</option>
+                        <option>Grade A</option>
+                        <option>Grade B</option>
+                        <option>Grade C</option>
+                      </select>
+                      <i class="material-icons select-arrow">expand_more</i>
+                    </div>
+                  </div>
+                  <div class="field-group col-full">
+                    <label class="field-label" for="remarks">Remarks</label>
+                    <div class="input-wrap textarea-wrap">
+                      <i class="material-icons input-icon">comment</i>
+                      <textarea id="remarks" class="field-input field-textarea" placeholder="Enter Remarks"
+                        rows="3"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- STEP 2: Identity & Docs -->
+              <section class="step-section" id="step-2">
+                <div class="form-grid">
+                  <div class="field-group col-half">
+                    <label class="field-label" for="aadhar">Aadhar Card No</label>
+                    <div class="input-wrap">
+                      <i class="material-icons input-icon">credit_card</i>
+                      <input id="aadhar" type="text" class="field-input" placeholder="XXXX XXXX XXXX">
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="pan">PAN No</label>
+                    <div class="input-wrap">
+                      <i class="material-icons input-icon">description</i>
+                      <input id="pan" type="text" class="field-input" placeholder="ABCDE1234F"
+                        style="text-transform:uppercase">
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="voterId">Voter ID No</label>
+                    <div class="input-wrap">
+                      <i class="material-icons input-icon">how_to_vote</i>
+                      <input id="voterId" type="text" class="field-input" placeholder="Voter ID No">
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="passport">Passport No</label>
+                    <div class="input-wrap">
+                      <i class="material-icons input-icon">flight_takeoff</i>
+                      <input id="passport" type="text" class="field-input" placeholder="Passport No">
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="maritalStatus">Marital Status</label>
+                    <div class="input-wrap select-wrap">
+                      <i class="material-icons input-icon">favorite</i>
+                      <select id="maritalStatus" class="field-input field-select">
+                        <option value="single">Single</option>
+                        <option value="married">Married</option>
+                        <option value="divorced">Divorced</option>
+                        <option value="widowed">Widowed</option>
+                      </select>
+                      <i class="material-icons select-arrow">expand_more</i>
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="dom">Date of Marriage</label>
+                    <div class="input-wrap">
+                      <i class="material-icons input-icon">celebration</i>
+                      <input id="dom" type="date" class="field-input">
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="bloodGroup">Blood Group</label>
+                    <div class="input-wrap select-wrap">
+                      <i class="material-icons input-icon">bloodtype</i>
+                      <select id="bloodGroup" class="field-input field-select">
+                        <option value="A+">A+</option>
+                        <option value="A-">A-</option>
+                        <option value="B+">B+</option>
+                        <option value="B-">B-</option>
+                        <option value="O+">O+</option>
+                        <option value="O-">O-</option>
+                        <option value="AB+">AB+</option>
+                        <option value="AB-">AB-</option>
+                      </select>
+                      <i class="material-icons select-arrow">expand_more</i>
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="category">Category</label>
+                    <div class="input-wrap select-wrap">
+                      <i class="material-icons input-icon">group</i>
+                      <select id="category" class="field-input field-select">
+                        <option value="general">GENERAL</option>
+                        <option value="obc">OBC</option>
+                        <option value="sc">SC</option>
+                        <option value="st">ST</option>
+                      </select>
+                      <i class="material-icons select-arrow">expand_more</i>
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="assetDetails">Asset Details</label>
+                    <div class="input-wrap">
+                      <i class="material-icons input-icon">devices</i>
+                      <input id="assetDetails" type="text" class="field-input" placeholder="Asset Details">
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label">ESIS / GMC / GPA</label>
+                    <div class="checkbox-group-row">
+                      <label class="checkbox-label">
+                        <input type="checkbox" class="checkbox-input" name="esigmc" value="esis">
+                        <span class="checkbox-custom"></span>
+                        ESIS
+                      </label>
+                      <label class="checkbox-label">
+                        <input type="checkbox" class="checkbox-input" name="esigmc" value="gmc">
+                        <span class="checkbox-custom"></span>
+                        GMC
+                      </label>
+                      <label class="checkbox-label">
+                        <input type="checkbox" class="checkbox-input" name="esigmc" value="gpa">
+                        <span class="checkbox-custom"></span>
+                        GPA
+                      </label>
+                    </div>
+                  </div>
+                  <div class="field-group col-full">
+                    <label class="field-label" for="medHistory">Medical History</label>
+                    <div class="input-wrap textarea-wrap">
+                      <i class="material-icons input-icon">medical_information</i>
+                      <textarea id="medHistory" class="field-input field-textarea"
+                        placeholder="Enter any relevant medical history..." rows="3"></textarea>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- STEP 3: Bank & Payroll -->
+              <section class="step-section" id="step-3">
+                <div class="form-grid">
+                  <div class="field-group col-half">
+                    <label class="field-label" for="bankName">Bank Name</label>
+                    <div class="input-wrap select-wrap">
+                      <i class="material-icons input-icon">account_balance</i>
+                      <select id="bankName" class="field-input field-select">
+                        <option value="">--Select Bank--</option>
+                        <option>State Bank of India</option>
+                        <option>HDFC Bank</option>
+                        <option>ICICI Bank</option>
+                        <option>Axis Bank</option>
+                        <option>Kotak Mahindra Bank</option>
+                      </select>
+                      <i class="material-icons select-arrow">expand_more</i>
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="accountNo">Account No</label>
+                    <div class="input-wrap">
+                      <i class="material-icons input-icon">numbers</i>
+                      <input id="accountNo" type="text" class="field-input" placeholder="Bank Account Number">
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="ifsc">IFSC Code</label>
+                    <div class="input-wrap">
+                      <i class="material-icons input-icon">code</i>
+                      <input id="ifsc" type="text" class="field-input" placeholder="Bank IFSC Code"
+                        style="text-transform:uppercase">
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="pfUan">PF A/C No (UAN)</label>
+                    <div class="input-wrap">
+                      <i class="material-icons input-icon">savings</i>
+                      <input id="pfUan" type="text" class="field-input" placeholder="PF(UAN) No">
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="uanNo">UAN No</label>
+                    <div class="input-wrap">
+                      <i class="material-icons input-icon">pin</i>
+                      <input id="uanNo" type="text" class="field-input" placeholder="UAN No">
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="esiAc">ESI A/C No</label>
+                    <div class="input-wrap">
+                      <i class="material-icons input-icon">health_and_safety</i>
+                      <input id="esiAc" type="text" class="field-input" placeholder="ESI A/C No">
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="voluntaryPf">Voluntary PF</label>
+                    <div class="input-wrap select-wrap">
+                      <i class="material-icons input-icon">volunteer_activism</i>
+                      <select id="voluntaryPf" class="field-input field-select">
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                      </select>
+                      <i class="material-icons select-arrow">expand_more</i>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- STEP 4: Work Schedule -->
+              <section class="step-section" id="step-4">
+                <div class="form-grid">
+                  <div class="field-group col-half">
+                    <label class="field-label" for="workingType">Working Type <span class="req">*</span></label>
+                    <div class="input-wrap select-wrap">
+                      <i class="material-icons input-icon">work_outline</i>
+                      <select id="workingType" class="field-input field-select">
+                        <option value="office">From Office</option>
+                        <option value="home">Work From Home</option>
+                        <option value="hybrid">Hybrid</option>
+                      </select>
+                      <i class="material-icons select-arrow">expand_more</i>
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="celebDob">Celebrating DOB</label>
+                    <div class="input-wrap">
+                      <i class="material-icons input-icon">cake</i>
+                      <input id="celebDob" type="date" class="field-input">
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="inTime">In Time <span class="req">*</span></label>
+                    <div class="input-wrap">
+                      <i class="material-icons input-icon">login</i>
+                      <input id="inTime" type="time" class="field-input" value="09:30">
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="outTime">Out Time <span class="req">*</span></label>
+                    <div class="input-wrap">
+                      <i class="material-icons input-icon">logout</i>
+                      <input id="outTime" type="time" class="field-input" value="18:30">
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="weeklyOffCount">Weekly Off Count</label>
+                    <div class="input-wrap">
+                      <i class="material-icons input-icon">event_repeat</i>
+                      <input id="weeklyOffCount" type="number" class="field-input" placeholder="Weekly Off Count"
+                        min="0" max="7">
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="lateEntry">Applicable Late Entry</label>
+                    <div class="input-wrap select-wrap">
+                      <i class="material-icons input-icon">timer_off</i>
+                      <select id="lateEntry" class="field-input field-select">
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                      </select>
+                      <i class="material-icons select-arrow">expand_more</i>
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="payDeduction">Applicable Paydays Deduction</label>
+                    <div class="input-wrap select-wrap">
+                      <i class="material-icons input-icon">money_off</i>
+                      <select id="payDeduction" class="field-input field-select">
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                      </select>
+                      <i class="material-icons select-arrow">expand_more</i>
+                    </div>
+                  </div>
+                  <div class="field-group col-half">
+                    <label class="field-label" for="mobileAttendance">Mobile Based Attendance</label>
+                    <div class="input-wrap select-wrap">
+                      <i class="material-icons input-icon">smartphone</i>
+                      <select id="mobileAttendance" class="field-input field-select">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                      </select>
+                      <i class="material-icons select-arrow">expand_more</i>
+                    </div>
+                  </div>
+                  <div class="field-group col-full">
+                    <label class="field-label">Weekly Off Days</label>
+                    <div class="weekly-off-grid">
+                      <label class="day-chip" data-day="mon"><input type="checkbox" value="monday"> Mon</label>
+                      <label class="day-chip" data-day="tue"><input type="checkbox" value="tuesday"> Tue</label>
+                      <label class="day-chip" data-day="wed"><input type="checkbox" value="wednesday"> Wed</label>
+                      <label class="day-chip" data-day="thu"><input type="checkbox" value="thursday"> Thu</label>
+                      <label class="day-chip" data-day="fri"><input type="checkbox" value="friday"> Fri</label>
+                      <label class="day-chip" data-day="1sat"><input type="checkbox" value="1st_saturday"> 1st
+                        Sat</label>
+                      <label class="day-chip" data-day="2sat"><input type="checkbox" value="2nd_saturday"> 2nd
+                        Sat</label>
+                      <label class="day-chip" data-day="3sat"><input type="checkbox" value="3rd_saturday"> 3rd
+                        Sat</label>
+                      <label class="day-chip" data-day="4sat"><input type="checkbox" value="4th_saturday"> 4th
+                        Sat</label>
+                      <label class="day-chip" data-day="sun"><input type="checkbox" value="sunday"> Sun</label>
+                      <label class="day-chip" data-day="sat"><input type="checkbox" value="saturday"> Sat</label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Review Card -->
+                <div class="review-card">
+                  <div class="review-card-header">
+                    <i class="material-icons">checklist</i>
+                    Ready to Submit
+                  </div>
+                  <p class="review-card-body">Please review all the information before submitting. Once submitted, the
+                    employee record will be created and an onboarding email will be sent.</p>
+                </div>
+              </section>
+
+            </div><!-- /.steps-wrapper -->
+
+            <!-- Footer Actions -->
+            <div class="form-footer">
+              <button class="btn-ghost" id="prevBtn" disabled>
+                <i class="material-icons">arrow_back</i> Previous
+              </button>
+              <div class="step-dots" id="stepDots"></div>
+              <button class="btn-primary" id="nextBtn">
+                Next <i class="material-icons">arrow_forward</i>
+              </button>
+              <button class="btn-submit hidden" id="submitBtn">
+                <i class="material-icons">check_circle</i> Submit Employee
+              </button>
+            </div>
+
+          </main><!-- /.right-panel -->
+        </div><!-- /.form-shell -->
+      </div><!-- /.add-emp-main -->
+    </div><!-- /.main-wrapper -->
+  </div><!-- /.app-container -->
+
+  <!-- Success Toast -->
+  <div class="toast" id="successToast">
+    <div class="toast-icon"><i class="material-icons">check_circle</i></div>
+    <div>
+      <p class="toast-title">Employee Added!</p>
+      <p class="toast-sub">Record created successfully.</p>
+    </div>
+  </div>
+
+  <script src="js/layout.js"></script>
+  <script src="js/employees.js"></script>
+</body>
+
+</html>

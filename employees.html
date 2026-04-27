@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="css/responsive.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <body>
   <div class="app-container">
     <aside class="sidebar" id="sidebar">
@@ -31,24 +32,21 @@
         <div class="nav-section">
           <p class="nav-section-title">Main</p>
           <ul class="nav-items">
+
             <li>
               <button class="nav-item" data-item="Dashboard" data-url="dashboard.html">
                 <i class="material-icons">dashboard</i>
                 <span>Dashboard</span>
               </button>
             </li>
+
             <li>
               <button class="nav-item active" data-item="Employees" data-url="employees.html">
                 <i class="material-icons">groups</i>
                 <span>Employees</span>
               </button>
             </li>
-            <li>
-              <button class="nav-item" data-item="Departments">
-                <i class="material-icons">apartment</i>
-                <span>Departments</span>
-              </button>
-            </li>
+
             <li class="has-children">
               <button class="nav-item nav-parent" data-item="Master">
                 <i class="material-icons">tune</i>
@@ -66,18 +64,22 @@
                       class="material-icons">schedule</i><span>Shift</span></button></li>
               </ul>
             </li>
+
           </ul>
         </div>
 
         <div class="nav-section">
           <p class="nav-section-title">Workforce</p>
           <ul class="nav-items">
-            <li><button class="nav-item" data-item="Attendance"><i class="material-icons">fact_check</i><span>Attendance</span></button></li>
+            <li>
+              <button class="nav-item" data-item="Attendance">
+                <i class="material-icons">fact_check</i><span>Attendance</span>
+              </button>
+            </li>
             <li class="has-children">
               <button class="nav-item nav-parent" data-item="Leave">
                 <i class="material-icons">event</i>
                 <span>Leave Management</span>
-                <span class="badge">5</span>
                 <i class="material-icons nav-arrow">expand_more</i>
               </button>
               <ul class="sub-nav">
@@ -89,7 +91,11 @@
                       class="material-icons">task_alt</i><span>Approval</span><span class="badge">5</span></button></li>
               </ul>
             </li>
-            <li><button class="nav-item" data-item="Timesheets"><i class="material-icons">schedule</i><span>Timesheets</span></button></li>
+            <li>
+              <button class="nav-item" data-item="Timesheets">
+                <i class="material-icons">schedule</i><span>Timesheets</span>
+              </button>
+            </li>
           </ul>
         </div>
 
@@ -111,16 +117,32 @@
                       class="material-icons">account_balance</i><span>Tax & Deductions</span></button></li>
               </ul>
             </li>
-            <li><button class="nav-item" data-item="Reports"><i class="material-icons">description</i><span>Reports</span></button></li>
-            <li><button class="nav-item" data-item="Performance"><i class="material-icons">emoji_events</i><span>Performance</span></button></li>
+            <li>
+              <button class="nav-item" data-item="Reports">
+                <i class="material-icons">description</i><span>Reports</span>
+              </button>
+            </li>
+            <li>
+              <button class="nav-item" data-item="Performance">
+                <i class="material-icons">emoji_events</i><span>Performance</span>
+              </button>
+            </li>
           </ul>
         </div>
 
         <div class="nav-section">
           <p class="nav-section-title">Analytics</p>
           <ul class="nav-items">
-            <li><button class="nav-item" data-item="Analytics"><i class="material-icons">bar_chart</i><span>Analytics</span></button></li>
-            <li><button class="nav-item" data-item="Notifications"><i class="material-icons">notifications</i><span>Notifications</span><span class="badge">3</span></button></li>
+            <li>
+              <button class="nav-item" data-item="Analytics">
+                <i class="material-icons">bar_chart</i><span>Analytics</span>
+              </button>
+            </li>
+            <li>
+              <button class="nav-item" data-item="Notifications">
+                <i class="material-icons">notifications</i><span>Notifications</span><span class="badge">3</span>
+              </button>
+            </li>
           </ul>
         </div>
       </nav>
@@ -138,25 +160,39 @@
           <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open sidebar">
             <i class="material-icons">menu</i>
           </button>
-          <div class="topbar-heading">
+          <h1 class="topbar-title">Employees</h1>
+          <!-- <div class="topbar-heading">
             <div class="topbar-logo-container">
               <div class="logo-badge"><i class="material-icons">apartment</i></div>
-              <div class="logo-text"><p class="logo-title">HRCore</p><p class="logo-subtitle">Management Suite</p></div>
+              <div class="logo-text">
+                <p class="logo-title">HRCore</p>
+                <p class="logo-subtitle">Management Suite</p>
+              </div>
             </div>
-          </div>
-          <div class="search-container"><i class="material-icons">search</i><input type="text" placeholder="Search employees, reports..."></div>
+          </div> -->
         </div>
         <div class="topbar-right">
-          <div class="date-badge"><i class="material-icons">calendar_today</i><span id="currentDate">April 23, 2026</span></div>
+          <div class="search-container">
+            <i class="material-icons">search</i>
+            <input type="text" placeholder="Search employees, reports...">
+          </div>
+          <div class="date-badge">
+            <i class="material-icons">calendar_today</i>
+            <span id="currentDate">April 23,2026</span>
+          </div>
           <button class="icon-btn" aria-label="Toggle theme"><i class="material-icons">light_mode</i></button>
           <div class="profile-container">
             <button class="profile-btn" id="profileBtn" aria-label="Open profile menu">
               <div class="avatar">A</div>
-              <div class="profile-info"><p>Admin User</p><span>HR Manager</span></div>
+              <div class="profile-info">
+                <p>Admin User</p><span>HR Manager</span>
+              </div>
               <i class="material-icons">expand_more</i>
             </button>
             <div class="profile-dropdown" id="profileDropdown">
-              <div class="dropdown-header"><p>Admin User</p><span>admin@hrcore.com</span></div>
+              <div class="dropdown-header">
+                <p>Admin User</p><span>admin@hrcore.com</span>
+              </div>
               <button>My Profile</button>
               <button>Account Settings</button>
               <button class="sign-out">Sign Out</button>
@@ -164,39 +200,329 @@
           </div>
         </div>
       </header>
-      <main class="employees-page page-view active" id="employeesPage">
-        <div class="employees-header">
-          <div>
-            <h1 class="employees-title">Employees</h1>
-            <p class="employees-subtitle">Manage your team members and their information</p>
+
+      <main class="master-page page-view active" id="masterPage">
+        <div class="employee-panel">
+
+          <!-- Filter Bar -->
+          <div class="emp-filter-bar">
+            <div class="emp-filter-fields">
+              <div class="emp-filter-group">
+                <label class="emp-filter-label" for="filterEmployee">Employee:</label>
+                <div class="emp-filter-select-wrap">
+                  <select id="filterEmployee" class="emp-filter-select">
+                    <option value="">Select Employee</option>
+                    <option>Rahul Sharma</option>
+                    <option>Priya Mehta</option>
+                    <option>Amit Patel</option>
+                    <option>Sneha Joshi</option>
+                    <option>Karan Verma</option>
+                  </select>
+                  <i class="material-icons emp-filter-arrow">expand_more</i>
+                </div>
+              </div>
+              <div class="emp-filter-group">
+                <label class="emp-filter-label" for="filterDesignation">Designation:</label>
+                <div class="emp-filter-select-wrap">
+                  <select id="filterDesignation" class="emp-filter-select">
+                    <option value="">Select Designation</option>
+                    <option>Senior Developer</option>
+                    <option>HR Manager</option>
+                    <option>Account Executive</option>
+                    <option>Assistant Manager - Operations</option>
+                    <option>Sales Executive</option>
+                  </select>
+                  <i class="material-icons emp-filter-arrow">expand_more</i>
+                </div>
+              </div>
+              <div class="emp-filter-group">
+                <label class="emp-filter-label" for="filterDepartment">Department:</label>
+                <div class="emp-filter-select-wrap">
+                  <select id="filterDepartment" class="emp-filter-select">
+                    <option value="">Select Department</option>
+                    <option>Information Technology</option>
+                    <option>Human Resources</option>
+                    <option>Finance</option>
+                    <option>Operations</option>
+                    <option>Sales</option>
+                  </select>
+                  <i class="material-icons emp-filter-arrow">expand_more</i>
+                </div>
+              </div>
+              <div class="emp-filter-group">
+                <label class="emp-filter-label" for="filterLocation">Location:</label>
+                <div class="emp-filter-select-wrap">
+                  <select id="filterLocation" class="emp-filter-select">
+                    <option value="">Select Location</option>
+                    <option>Mumbai</option>
+                    <option>Delhi</option>
+                    <option>Bangalore</option>
+                    <option>Hyderabad</option>
+                    <option>Pune</option>
+                  </select>
+                  <i class="material-icons emp-filter-arrow">expand_more</i>
+                </div>
+              </div>
+              <div class="emp-filter-group">
+                <label class="emp-filter-label" for="filterStatus">Status:</label>
+                <div class="emp-filter-select-wrap">
+                  <select id="filterStatus" class="emp-filter-select">
+                    <option value="">All</option>
+                    <option value="active">Active</option>
+                    <option value="inactive">Inactive</option>
+                    <option value="probation">Probation</option>
+                  </select>
+                  <i class="material-icons emp-filter-arrow">expand_more</i>
+                </div>
+              </div>
+            </div>
+            <button class="employee-primary-btn" id="filterDisplayBtn">Display</button>
           </div>
-          <button class="add-employee-btn"><i class="material-icons">add</i><span>Add New Employee</span></button>
-        </div>
-
-        <div class="employees-filters">
-          <label class="employee-search" for="employeeSearch"><i class="material-icons">search</i><input id="employeeSearch" type="search" placeholder="Search by name or email..."></label>
-          <select class="filter-select" aria-label="Filter by department"><option>All Departments</option><option>Design</option><option>Engineering</option><option>Marketing</option><option>Product</option><option>Analytics</option></select>
-          <select class="filter-select" aria-label="Filter by status"><option>All Status</option><option>Active</option><option>On Leave</option><option>Inactive</option></select>
-        </div>
-
-        <div class="employees-toolbar">
-          <div class="view-toggle"><button class="active">Table</button><button>Grid</button></div>
-          <button class="export-btn"><i class="material-icons">file_download</i><span>Export</span></button>
-        </div>
-
-        <div class="employee-directory-card">
-          <div class="employee-directory-table">
-            <div class="directory-row directory-header"><div>Employee</div><div>Department</div><div>Position</div><div>Status</div><div>Join Date</div><div>Actions</div></div>
-            <div class="directory-row"><div class="directory-employee"><div class="avatar orange">SJ</div><div><p>Sarah Johnson</p><span>sarah.johnson@hrcore.com</span></div></div><div><span class="dept-label">Design</span></div><div>UI/UX Designer</div><div><span class="status-badge active">Active</span></div><div>Apr 10, 2024</div><div class="directory-actions"><button aria-label="View Sarah Johnson card"><i class="material-icons">credit_card</i></button><button aria-label="Delete Sarah Johnson"><i class="material-icons">delete_outline</i></button><button aria-label="More actions for Sarah Johnson"><i class="material-icons">more_horiz</i></button></div></div>
-            <div class="directory-row"><div class="directory-employee"><div class="avatar blue">MC</div><div><p>Marcus Chen</p><span>marcus.chen@hrcore.com</span></div></div><div><span class="dept-label">Engineering</span></div><div>Backend Developer</div><div><span class="status-badge active">Active</span></div><div>Aug 15, 2023</div><div class="directory-actions"><button aria-label="View Marcus Chen card"><i class="material-icons">credit_card</i></button><button aria-label="Delete Marcus Chen"><i class="material-icons">delete_outline</i></button><button aria-label="More actions for Marcus Chen"><i class="material-icons">more_horiz</i></button></div></div>
-            <div class="directory-row"><div class="directory-employee"><div class="avatar green">ER</div><div><p>Emily Rodriguez</p><span>emily.rodriguez@hrcore.com</span></div></div><div><span class="dept-label">Marketing</span></div><div>Marketing Lead</div><div><span class="status-badge leave">On Leave</span></div><div>May 20, 2023</div><div class="directory-actions"><button aria-label="View Emily Rodriguez card"><i class="material-icons">credit_card</i></button><button aria-label="Delete Emily Rodriguez"><i class="material-icons">delete_outline</i></button><button aria-label="More actions for Emily Rodriguez"><i class="material-icons">more_horiz</i></button></div></div>
-            <div class="directory-row"><div class="directory-employee"><div class="avatar pink">DK</div><div><p>David Kim</p><span>david.kim@hrcore.com</span></div></div><div><span class="dept-label">Product</span></div><div>Product Manager</div><div><span class="status-badge active">Active</span></div><div>Jan 10, 2023</div><div class="directory-actions"><button aria-label="View David Kim card"><i class="material-icons">credit_card</i></button><button aria-label="Delete David Kim"><i class="material-icons">delete_outline</i></button><button aria-label="More actions for David Kim"><i class="material-icons">more_horiz</i></button></div></div>
-            <div class="directory-row"><div class="directory-employee"><div class="avatar teal">PP</div><div><p>Priya Patel</p><span>priya.patel@hrcore.com</span></div></div><div><span class="dept-label">Analytics</span></div><div>Data Analyst</div><div><span class="status-badge active">Active</span></div><div>Jun 05, 2024</div><div class="directory-actions"><button aria-label="View Priya Patel card"><i class="material-icons">credit_card</i></button><button aria-label="Delete Priya Patel"><i class="material-icons">delete_outline</i></button><button aria-label="More actions for Priya Patel"><i class="material-icons">more_horiz</i></button></div></div>
+          <div class="employee-panel-header">
+            <label class="employee-search" for="masterSearch">
+              <i class="material-icons">search</i>
+              <input id="masterSearch" type="search" placeholder="Search records...">
+            </label>
+            <div class="" style="display: flex; gap: 10px; align-self: center;">
+              <button class="employee-export-btn">
+                <i class="material-icons">file_download</i>
+                <span>Excel</span>
+              </button>
+              <button class="employee-primary-btn" id="openAddEmployee"
+                onclick="window.location.href='employeesadd.html'">
+                <i class="material-icons">add</i>
+                <span>Add Employee</span>
+              </button>
+            </div>
+          </div>
+          <div class="employee-table-wrap">
+            <table class="employee-table" aria-label="Employee records">
+              <thead>
+                <tr>
+                  <th class="col-srno">SRNO. <i class="material-icons sort-icon">unfold_more</i></th>
+                  <th class="col-icon"><i class="material-icons sort-icon">unfold_more</i></th>
+                  <th class="col-icon"><i class="material-icons sort-icon">unfold_more</i></th>
+                  <th class="col-icon">VIEW <i class="material-icons sort-icon">unfold_more</i></th>
+                  <th class="col-icon">EDU <i class="material-icons sort-icon">unfold_more</i></th>
+                  <th class="col-icon">EMP <i class="material-icons sort-icon">unfold_more</i></th>
+                  <th class="col-icon">DOCS <i class="material-icons sort-icon">unfold_more</i></th>
+                  <th class="col-icon">INVST. <i class="material-icons sort-icon">unfold_more</i></th>
+                  <th class="col-icon">MEM. <i class="material-icons sort-icon">unfold_more</i></th>
+                  <th class="col-icon">SOS <i class="material-icons sort-icon">unfold_more</i></th>
+                  <th>EMPLOYEE CODE <i class="material-icons sort-icon">unfold_more</i></th>
+                  <th>FIRST NAME <i class="material-icons sort-icon">unfold_more</i></th>
+                  <th>MIDDLE NAME <i class="material-icons sort-icon">unfold_more</i></th>
+                  <th>LAST NAME <i class="material-icons sort-icon">unfold_more</i></th>
+                  <th>CONTACT NO <i class="material-icons sort-icon">unfold_more</i></th>
+                  <th>DESIGNATION <i class="material-icons sort-icon">unfold_more</i></th>
+                  <th>LOCATION <i class="material-icons sort-icon">unfold_more</i></th>
+                  <th>DEPARMENT <i class="material-icons sort-icon">unfold_more</i></th>
+                  <th>COST CENTER <i class="material-icons sort-icon">unfold_more</i></th>
+                  <th class="col-category">CATEGORY <i class="material-icons sort-icon">unfold_more</i></th>
+                  <th class="col-email">COMPANY EMAIL ID <i class="material-icons sort-icon">unfold_more</i></th>
+                  <th class="col-email">PERSONAL EMAIL ID <i class="material-icons sort-icon">unfold_more</i></th>
+                  <th>REPORTING PERSON <i class="material-icons sort-icon">unfold_more</i></th>
+                  <th class="col-narrow">BLOOD GROUP <i class="material-icons sort-icon">unfold_more</i></th>
+                  <th>DATE OF BIRTH <i class="material-icons sort-icon">unfold_more</i></th>
+                  <th>DATE OF JOINING <i class="material-icons sort-icon">unfold_more</i></th>
+                  <th>BANK NAME <i class="material-icons sort-icon">unfold_more</i></th>
+                  <th>ISFC <i class="material-icons sort-icon">unfold_more</i></th>
+                  <th>BANK ACCOUNT NO. <i class="material-icons sort-icon">unfold_more</i></th>
+                  <th class="col-emergency">EMERGENCY CONTACT PERSON <i class="material-icons sort-icon">unfold_more</i></th>
+                  <th class="col-emergency">EMERGENCY MOBILE NO. <i class="material-icons sort-icon">unfold_more</i></th>
+                  <th>STATUS <i class="material-icons sort-icon">unfold_more</i></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td class="col-icon"><div class="emp-avatar"><i class="material-icons">person</i></div></td>
+                  <td class="col-icon"><button class="tbl-icon-btn red" title="Download"><i class="material-icons">south</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn" title="View" onclick="" ><i class="material-icons">edit</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn dark" title="Education"><i class="material-icons">school</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn blue" title="Employment"><i class="material-icons">manage_accounts</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn orange" title="Documents"><i class="material-icons">picture_as_pdf</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn gold" title="Investments"><i class="material-icons">savings</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn teal" title="Members"><i class="material-icons">group</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn red-outline" title="SOS"><i class="material-icons">emergency</i></button></td>
+                  <td>ST2431</td>
+                  <td>Rahul</td>
+                  <td>Kumar</td>
+                  <td>Sharma</td>
+                  <td>9876543210</td>
+                  <td>Senior Developer</td>
+                  <td>Mumbai</td>
+                  <td>IT</td>
+                  <td>CC-003 IT</td>
+                  <td>GENERAL</td>
+                  <td>rahul.sharma@synergy.com</td>
+                  <td>rahul.kumar92@gmail.com</td>
+                  <td>Priya Mehta</td>
+                  <td>B+</td>
+                  <td>15/Jun/1992</td>
+                  <td>12/Jan/2022</td>
+                  <td>HDFC Bank</td>
+                  <td>HDFC0001234</td>
+                  <td>50100234567890</td>
+                  <td>Sunita Sharma</td>
+                  <td>9876500001</td>
+                  <td><span class="status-badge active">Active</span></td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td class="col-icon"><div class="emp-avatar female"><i class="material-icons">person</i></div></td>
+                  <td class="col-icon"><button class="tbl-icon-btn red" title="Download"><i class="material-icons">south</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn" title="View"><i class="material-icons">edit</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn dark" title="Education"><i class="material-icons">school</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn blue" title="Employment"><i class="material-icons">manage_accounts</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn orange" title="Documents"><i class="material-icons">picture_as_pdf</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn gold" title="Investments"><i class="material-icons">savings</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn teal" title="Members"><i class="material-icons">group</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn red-outline" title="SOS"><i class="material-icons">emergency</i></button></td>
+                  <td>ST2445</td>
+                  <td>Priya</td>
+                  <td></td>
+                  <td>Mehta</td>
+                  <td>9123456780</td>
+                  <td>HR Manager</td>
+                  <td>Pune</td>
+                  <td>HR</td>
+                  <td>CC-001 Corporate</td>
+                  <td>GENERAL</td>
+                  <td>priya.mehta@synergy.com</td>
+                  <td>priya.mehta90@gmail.com</td>
+                  <td>Amit Patel</td>
+                  <td>A+</td>
+                  <td>22/Nov/1990</td>
+                  <td>03/Mar/2020</td>
+                  <td>State Bank of India</td>
+                  <td>SBIN0005678</td>
+                  <td>32190987654321</td>
+                  <td>Vikram Mehta</td>
+                  <td>9123400001</td>
+                  <td><span class="status-badge active">Active</span></td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td class="col-icon"><div class="emp-avatar"><i class="material-icons">person</i></div></td>
+                  <td class="col-icon"><button class="tbl-icon-btn red" title="Download"><i class="material-icons">south</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn" title="View"><i class="material-icons">edit</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn dark" title="Education"><i class="material-icons">school</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn blue" title="Employment"><i class="material-icons">manage_accounts</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn orange" title="Documents"><i class="material-icons">picture_as_pdf</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn gold" title="Investments"><i class="material-icons">savings</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn teal" title="Members"><i class="material-icons">group</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn red-outline" title="SOS"><i class="material-icons">emergency</i></button></td>
+                  <td>ST2460</td>
+                  <td>Amit</td>
+                  <td>Rajesh</td>
+                  <td>Patel</td>
+                  <td>9988776655</td>
+                  <td>Account Executive</td>
+                  <td>Bangalore</td>
+                  <td>Finance</td>
+                  <td>CC-002 Operations</td>
+                  <td>OBC</td>
+                  <td>amit.patel@synergy.com</td>
+                  <td>amitpatel95@gmail.com</td>
+                  <td>Rahul Sharma</td>
+                  <td>O+</td>
+                  <td>10/Mar/1995</td>
+                  <td>19/Jul/2021</td>
+                  <td>ICICI Bank</td>
+                  <td>ICIC0002345</td>
+                  <td>123456789012</td>
+                  <td>Meena Patel</td>
+                  <td>9988700001</td>
+                  <td><span class="status-badge active">Active</span></td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td class="col-icon"><div class="emp-avatar female"><i class="material-icons">person</i></div></td>
+                  <td class="col-icon"><button class="tbl-icon-btn red" title="Download"><i class="material-icons">south</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn" title="View"><i class="material-icons">edit</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn dark" title="Education"><i class="material-icons">school</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn blue" title="Employment"><i class="material-icons">manage_accounts</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn orange" title="Documents"><i class="material-icons">picture_as_pdf</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn gold" title="Investments"><i class="material-icons">savings</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn teal" title="Members"><i class="material-icons">group</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn red-outline" title="SOS"><i class="material-icons">emergency</i></button></td>
+                  <td>ST2478</td>
+                  <td>Sneha</td>
+                  <td></td>
+                  <td>Joshi</td>
+                  <td>9011223344</td>
+                  <td>Asst Manager - Operations</td>
+                  <td>Delhi</td>
+                  <td>Operations</td>
+                  <td>CC-002 Operations</td>
+                  <td>GENERAL</td>
+                  <td>sneha.joshi@synergy.com</td>
+                  <td>snehajoshi88@gmail.com</td>
+                  <td>Priya Mehta</td>
+                  <td>AB+</td>
+                  <td>05/Sep/1988</td>
+                  <td>08/Nov/2019</td>
+                  <td>Axis Bank</td>
+                  <td>UTIB0003456</td>
+                  <td>9200123456789</td>
+                  <td>Ramesh Joshi</td>
+                  <td>9011200001</td>
+                  <td><span class="status-badge active">Active</span></td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td class="col-icon"><div class="emp-avatar"><i class="material-icons">person</i></div></td>
+                  <td class="col-icon"><button class="tbl-icon-btn red" title="Download"><i class="material-icons">south</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn" title="View"><i class="material-icons">edit</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn dark" title="Education"><i class="material-icons">school</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn blue" title="Employment"><i class="material-icons">manage_accounts</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn orange" title="Documents"><i class="material-icons">picture_as_pdf</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn gold" title="Investments"><i class="material-icons">savings</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn teal" title="Members"><i class="material-icons">group</i></button></td>
+                  <td class="col-icon"><button class="tbl-icon-btn red-outline" title="SOS"><i class="material-icons">emergency</i></button></td>
+                  <td>ST2492</td>
+                  <td>Karan</td>
+                  <td>Singh</td>
+                  <td>Verma</td>
+                  <td>9765432100</td>
+                  <td>Sales Executive</td>
+                  <td>Hyderabad</td>
+                  <td>Sales</td>
+                  <td>CC-001 Corporate</td>
+                  <td>GENERAL</td>
+                  <td>karan.verma@synergy.com</td>
+                  <td>karanverma97@gmail.com</td>
+                  <td>Sneha Joshi</td>
+                  <td>B-</td>
+                  <td>18/Dec/1997</td>
+                  <td>14/Feb/2023</td>
+                  <td>Kotak Mahindra Bank</td>
+                  <td>KKBK0004567</td>
+                  <td>7811234567890</td>
+                  <td>Sunita Verma</td>
+                  <td>9765400001</td>
+                  <td><span class="status-badge probation">Probation Period</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="employee-pagination">
+            <span>Showing 1 to 5 of 143 entries</span>
+            <div>
+              <button disabled>Previous</button>
+              <button class="active">1</button>
+              <button>2</button>
+              <button>3</button>
+              <button>Next</button>
+            </div>
           </div>
         </div>
       </main>
     </div>
   </div>
+
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/layout.js"></script>

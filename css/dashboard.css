@@ -73,7 +73,6 @@
 
 .stats-grid {
   display: grid;
-  /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
 }
@@ -213,12 +212,11 @@
   background: #F1EFE8;
 }
 
-.card-body {
+.card-body{
   flex: 1;
   text-align: right;
+  /* border: 2px solid red; */
 }
-
-
 .card-value {
   font-size: 24px;
   font-weight: 700;
